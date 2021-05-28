@@ -40,8 +40,6 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.5,
 mesh = SubResource( 6 )
 material/0 = null
 
-[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
-[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
 [connection signal="body_entered" from="HitZone" to="." method="_on_HitZone_body_entered"]
 [connection signal="body_exited" from="HitZone" to="." method="_on_HitZone_body_exited"]
 [connection signal="timeout" from="HitTimer" to="." method="_on_HitTimer_timeout"]
