@@ -24,6 +24,14 @@ shape = SubResource( 1 )
 
 [node name="CSGBox" type="CSGBox" parent="Ground"]
 
+[node name="Slope" type="StaticBody" parent="."]
+transform = Transform( 14.5018, 0, 0, 0, 0.245997, -5.29877, 0, 0.106233, 12.27, 0, 5.15783, -24.7309 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Slope"]
+shape = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="Slope"]
+
 [node name="Building" type="StaticBody" parent="."]
 transform = Transform( -4.87485, 0, 0, 0, 4.38831, 0, 0, 0, 3.45584, 0, 4.61846, 6.77904 )
 

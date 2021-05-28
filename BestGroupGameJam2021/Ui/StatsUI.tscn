@@ -48,20 +48,20 @@ __meta__ = {
 }
 
 [node name="ChargesCount" type="Label" parent="."]
-margin_left = 51.6438
-margin_top = 43.7067
-margin_right = 86.6438
-margin_bottom = 57.7067
+margin_left = 57.0092
+margin_top = 45.2941
+margin_right = 92.0092
+margin_bottom = 59.2941
 text = "1 / 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Charges" type="Label" parent="ChargesCount"]
-margin_left = -47.311
-margin_top = 0.442993
-margin_right = -4.31097
-margin_bottom = 14.443
+[node name="Charges" type="Label" parent="."]
+margin_left = 5.3328
+margin_top = 44.1497
+margin_right = 55.3328
+margin_bottom = 58.1497
 text = "Charges"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -91,6 +91,7 @@ __meta__ = {
 }
 
 [node name="PowerBar" type="ProgressBar" parent="."]
+visible = false
 margin_left = 48.75
 margin_top = 23.5
 margin_right = 176.75
@@ -104,6 +105,7 @@ __meta__ = {
 }
 
 [node name="Power" type="Label" parent="PowerBar"]
+visible = false
 margin_left = -43.75
 margin_top = 2.5
 margin_right = -1.75
@@ -114,6 +116,7 @@ __meta__ = {
 }
 
 [node name="TextEvent" type="Label" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
