@@ -47,7 +47,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AmmoCount" type="Label" parent="."]
+[node name="ChargesCount" type="Label" parent="."]
 margin_left = 51.6438
 margin_top = 43.7067
 margin_right = 86.6438
@@ -57,12 +57,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Ammo" type="Label" parent="AmmoCount"]
+[node name="Charges" type="Label" parent="ChargesCount"]
 margin_left = -47.311
 margin_top = 0.442993
 margin_right = -4.31097
 margin_bottom = 14.443
-text = "Ammo"
+text = "Charges"
 __meta__ = {
 "_edit_use_anchors_": false
 }
