@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Levels/Enviroment.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Materials/PurpleGlowing.tres" type="Material" id=6]
 [ext_resource path="res://GameModels/Items/Battery.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GameModels/Items/coonan357(item).tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=9]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -101,7 +102,6 @@ omni_range = 1.23696
 [node name="Lights" type="Spatial" parent="."]
 
 [node name="OmniLight" type="OmniLight" parent="Lights"]
-
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00978756, 2.33701, -0.794588 )
 visible = false
 omni_range = 8.38106
@@ -114,3 +114,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465788, 2.4626, -6.62074 )
 
 [node name="coonan" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.65107, 0 )
+
+[node name="Enemys" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemys" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 12.1117, 4.32343, -9.15189 )
