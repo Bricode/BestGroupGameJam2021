@@ -7,7 +7,7 @@ func _ready():
 func _process(delta):
 	$HealthBar.value = PlayerInfo.health
 	$PowerBar.value = PlayerInfo.power
-	$AmmoCount.text = str(PlayerInfo.ammo_clip) + " / " + str(PlayerInfo.ammo)
+	$chargesCount.text = str(PlayerInfo.charges_clip) + " / " + str(PlayerInfo.charges)
 	$TextEvent.text = PlayerInfo.textevent
 	#$TextEvent/Timer.start(1)
 		

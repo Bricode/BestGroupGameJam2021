@@ -12,7 +12,7 @@
 [node name="Spatial" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22422, 3.66799, -4.55087 )
+transform = Transform( -0.354846, 0, 0.934925, 0, 1, 0, -0.934925, 0, -0.354846, 7.22422, 3.66799, -4.55087 )
 
 [node name="Ground" type="StaticBody" parent="."]
 transform = Transform( 14.5018, 0, 0, 0, 0.267955, 0, 0, 0, 13.3652, 0, 0, 0 )
