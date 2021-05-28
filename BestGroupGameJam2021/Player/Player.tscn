@@ -52,6 +52,7 @@ camera_path = NodePath("../..")
 
 [node name="FlashLight" type="SpotLight" parent="Head/Camera/Weapons"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6 )
+light_color = Color( 1, 0, 0, 1 )
 light_specular = 0.84
 spot_range = 15.0
 spot_attenuation = 5.0
@@ -105,4 +106,5 @@ camera_path = NodePath("../../../Head/Camera")
 [node name="Ui" parent="." instance=ExtResource( 2 )]
 
 [node name="Menu" parent="." instance=ExtResource( 6 )]
+
 [connection signal="timeout" from="Head/Camera/Weapons/FlashLight/PowerDrain" to="Head/Camera/Weapons/FlashLight" method="_on_PowerDrain_timeout"]
