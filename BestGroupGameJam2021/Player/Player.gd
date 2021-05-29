@@ -13,7 +13,7 @@ onready var camera = $Head/Camera
 
 var velocity = Vector3()
 var camera_x_rotation = 0
-
+var current_health = PlayerInfo.health
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -26,6 +26,10 @@ func _input(event):
 			camera.rotate_x(deg2rad(-x_delta))
 			camera_x_rotation += x_delta
 
+func _process(delta):
+	if (current_health > PlayerInfo.health):
+		$HitSound.play()
+		
 func _physics_process(delta):
 	var head_basis = head.get_global_transform().basis
 	
@@ -56,6 +60,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity * delta, Vector3.UP)
 	
 	if Input.is_action_just_pressed("primary_fire"):
+		$LazerSound.play()
 		if PlayerInfo.charge >= 10:
 			PlayerInfo.change_charge(-10)
 			var lazer = load("res://Player/LaserMesh.tscn").instance()
