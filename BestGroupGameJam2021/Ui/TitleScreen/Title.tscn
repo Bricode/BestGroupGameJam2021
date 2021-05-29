@@ -53,9 +53,9 @@ __meta__ = {
 
 [node name="Node2D" parent="Logo/NewGame" instance=ExtResource( 2 )]
 margin_left = 373.443
-margin_top = -4.93756
+margin_top = -1.16206
 margin_right = 373.443
-margin_bottom = -4.93756
+margin_bottom = -1.16206
 
 [node name="Exit" type="TextureButton" parent="Logo"]
 margin_left = 167.0
