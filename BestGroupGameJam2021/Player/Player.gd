@@ -32,9 +32,6 @@ func _input(event):
 		if camera_x_rotation + x_delta > -90 and camera_x_rotation + x_delta < 90: 
 			camera.rotate_x(deg2rad(-x_delta))
 			camera_x_rotation += x_delta
-
-
-
 		
 func _physics_process(delta):
 	var head_basis = head.get_global_transform().basis
@@ -85,10 +82,11 @@ func _physics_process(delta):
 			lazer.translation = global_transform.origin + Vector3(0,0.5,0)
 			get_parent().get_node("Lazers").add_child(lazer)
 			if PlayerInfo.score >= 1100:
+				print("work")
 				lazer = load("res://Player/LaserMesh.tscn").instance()
 				lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
 				lazer.look_at(lazer.move,Vector3.UP)
-				lazer.translation = global_transform.origin- Vector3(0,0.5,0)
+				lazer.translation = global_transform.origin - Vector3(0,0.5,0)
 				get_parent().get_node("Lazers").add_child(lazer)
 				if PlayerInfo.score >= 5100:
 					lazer = load("res://Player/LaserMesh.tscn").instance()
