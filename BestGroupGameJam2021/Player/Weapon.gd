@@ -29,25 +29,9 @@ func _ready():
 	camera = get_node(camera_path)
 	
 func _process(delta):
-	if PlayerInfo.weapon == true:
-		visible = true
-		if Input.is_action_pressed("primary_fire") and can_fire:
-			if PlayerInfo.get_charge() > 0 and not reloading:
-				fire()
-			elif not reloading:
-				reload()
-	
-		if Input.is_action_just_pressed("reload") and not reloading:
-			reload()
-	
-		if Input.is_action_pressed("aim"):
-			transform.origin = transform.origin.linear_interpolate(ads_position, ads_acceleration)
-			camera.fov = lerp(camera.fov, ads_fov, ads_acceleration)
-		else:
-			transform.origin = transform.origin.linear_interpolate(default_position, ads_acceleration)
-			camera.fov = lerp(camera.fov, default_fov, ads_acceleration)
-	else:
-		visible = false
+	if Input.is_action_pressed("primary_fire") and can_fire:
+		if PlayerInfo.charge > 0:
+			fire()
 
 func check_collision():
 	var space_state = get_world().direct_space_state
@@ -68,14 +52,5 @@ func fire():
 	check_collision()
 	yield(get_tree().create_timer(fire_rate), "timeout")
 	can_fire = true
-
-func reload():
-	print("Reloading")
-	reloading = true
-	yield(get_tree().create_timer(reload_rate), "timeout")
-	PlayerInfo.change_charge_clip(-1)
-	PlayerInfo.change_charge(100)
-	reloading = false
-	print("Reload complete")
 
 

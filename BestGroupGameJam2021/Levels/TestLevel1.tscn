@@ -14,6 +14,12 @@
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0.000785398, 0, -0.000785398, 1, 0, 1.9613, 2.17421 )
 
+[node name="Camera" parent="Player/Head" index="0"]
+current = true
+
+[node name="Camera" parent="Player/ViewportContainer/Viewport" index="0"]
+current = true
+
 [node name="Ground" type="Spatial" parent="."]
 
 [node name="SmoothStoneBlock" parent="Ground" instance=ExtResource( 2 )]

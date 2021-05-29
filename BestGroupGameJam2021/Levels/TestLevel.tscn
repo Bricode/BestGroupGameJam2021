@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Enemy/Enemy_spawns.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,10 +6,7 @@
 [ext_resource path="res://Materials/GreenGlowing.tres" type="Material" id=4]
 [ext_resource path="res://Materials/BlueGlowing.tres" type="Material" id=5]
 [ext_resource path="res://Materials/PurpleGlowing.tres" type="Material" id=6]
-[ext_resource path="res://GameModels/Items/Battery.tscn" type="PackedScene" id=7]
-[ext_resource path="res://GameModels/Items/coonan357(item).tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Levels/Enviroment.tscn" type="PackedScene" id=10]
 [ext_resource path="res://GameModels/Items/HuhuGrub.tscn" type="PackedScene" id=11]
 
 [sub_resource type="BoxShape" id=1]
@@ -192,31 +189,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00978756, 2.33701, -0.79458
 visible = false
 omni_range = 8.38106
 
-[node name="Battery" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465788, 2.4626, -6.62074 )
-
-[node name="Battery2" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465788, 2.4626, -6.62074 )
-
-[node name="coonan" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.65107, 0 )
-
 [node name="Enemys" type="Node" parent="."]
 
 [node name="Enemy" parent="Enemys" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.3683, 29.587, 2.27412 )
 
-[node name="Enemy2" parent="Enemys" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71.9734, 53.5567, 10.9962 )
-
-[node name="Enemy3" parent="Enemys" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61.8502, 45.4333, 12.023 )
-
-[node name="WorldEnvironment" parent="." instance=ExtResource( 10 )]
-
 [node name="Enemy_spawn_timer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
+wait_time = 0.1
 
 [node name="Enemy_Spawns" type="Node" parent="."]
 script = ExtResource( 1 )
@@ -235,5 +214,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 80.1217, 34.3763, 54.2385 )
 
 [node name="HuhuGrub" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.18305, 17.9736, -4.56969 )
+
+[node name="Lazers" type="Node" parent="."]
 
 [connection signal="timeout" from="Enemy_spawn_timer" to="Enemy_Spawns" method="_on_Enemy_spawn_timer_timeout"]

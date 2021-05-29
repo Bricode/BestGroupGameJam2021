@@ -18,6 +18,19 @@ func _ready():
 func _on_Area_body_shape_entered(body_id, body, body_shape, area_shape):
 	if body.is_in_group("Player"):
 		if PlayerInfo.charge <= 99:
-			PlayerInfo.change_charge(10)
+			PlayerInfo.change_charge(50)
 			PlayerInfo.change_score(10)
-			queue_free()
+		newlocation()
+			
+func newlocation():
+	hide()
+	var newzpos = rand_range(-1.5,1.5)
+	var newxpos = rand_range(-1.5,1.5)
+	translation = Vector3(newxpos,0.1,newzpos)
+	$Timer.start()
+	
+
+
+
+func _on_Timer_timeout():
+	show()

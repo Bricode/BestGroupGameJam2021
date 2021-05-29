@@ -1,0 +1,113 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GameModels/Items/HuhuGrub.tscn" type="PackedScene" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.0156863, 0.858824, 0.0470588, 1 )
+
+[sub_resource type="PlaneMesh" id=1]
+material = SubResource( 3 )
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.0980392, 0.27451, 0.972549, 1 )
+
+[sub_resource type="CubeMesh" id=5]
+material = SubResource( 4 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 1.18143, 1.45828, 1.12893 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6971, 0 )
+
+[node name="Car" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.47833, 0, -5.98589 )
+
+[node name="HuhuGrub" parent="Car" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.1, -1.5 )
+
+[node name="HuhuGrub2" parent="Car" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.1, 1.5 )
+
+[node name="HuhuGrub3" parent="Car" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.1, -1.5 )
+
+[node name="HuhuGrub4" parent="Car" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.1, 1.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Car"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.984782, 0 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Area" type="Area" parent="Car/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Car/MeshInstance/Area"]
+shape = SubResource( 6 )
+
+[node name="Car2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.22705, 0, -5.98589 )
+
+[node name="HuhuGrub" parent="Car2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.1, -1.5 )
+
+[node name="HuhuGrub2" parent="Car2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.1, 1.5 )
+
+[node name="HuhuGrub3" parent="Car2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.1, -1.5 )
+
+[node name="HuhuGrub4" parent="Car2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.1, 1.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Car2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.984782, 0 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Area" type="Area" parent="Car2/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Car2/MeshInstance/Area"]
+shape = SubResource( 6 )
+
+[node name="Car3" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.22705, 0, 4.68803 )
+
+[node name="HuhuGrub" parent="Car3" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.1, -1.5 )
+
+[node name="HuhuGrub2" parent="Car3" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.1, 1.5 )
+
+[node name="HuhuGrub3" parent="Car3" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.1, -1.5 )
+
+[node name="HuhuGrub4" parent="Car3" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.1, 1.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Car3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.984782, 0 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Area" type="Area" parent="Car3/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Car3/MeshInstance/Area"]
+shape = SubResource( 6 )
