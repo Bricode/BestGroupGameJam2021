@@ -43,13 +43,13 @@ func show_high_score():
 		save.set_script(load("res://Ui/HighscoreWindow/High_score_save.gd"))
 		print(ResourceSaver.save("user://save.res",save))
 	
-	for l in $HighScores/Box.get_children():
+	for l in $HighScores/ScrollContainer/Box.get_children():
 		l.queue_free()
 	
 	for p in save.places:
 		var lab = Label.new()
 		lab.text = p.name + ":" + str(p.score)
-		$HighScores/Box.add_child(lab)
+		$HighScores/ScrollContainer/Box.add_child(lab)
 
 func _on_Add_score_button_down():
 	add_hight_score(current,$YouDied/Add_score/TextEdit.text)
