@@ -28,10 +28,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -199.0
-margin_top = -262.5
-margin_right = 199.0
-margin_bottom = -149.5
+margin_left = -398.798
+margin_top = -252.398
+margin_right = -0.798248
+margin_bottom = -139.398
+rect_pivot_offset = Vector2( -368.319, -75.0254 )
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 2 )
 texture_hover = ExtResource( 3 )
@@ -71,11 +72,52 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HighScores" parent="YouDied" instance=ExtResource( 8 )]
-margin_left = 436.961
-margin_top = 113.127
-margin_right = 436.961
-margin_bottom = 113.127
+[node name="Add_score" type="TextureButton" parent="YouDied"]
+visible = false
+margin_left = 420.775
+margin_top = 258.0
+margin_right = 617.775
+margin_bottom = 307.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Currnet" type="Label" parent="YouDied/Add_score"]
+margin_left = 5.04834
+margin_top = -129.611
+margin_right = 100.048
+margin_bottom = -115.611
+rect_scale = Vector2( 2, 2 )
+text = "Current: 42069"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="YouDied/Add_score"]
+margin_left = 10.0483
+margin_top = -97.611
+margin_right = 105.048
+margin_bottom = -83.611
+rect_scale = Vector2( 2, 2 )
+text = "Add name:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="YouDied/Add_score"]
+margin_left = 10.0484
+margin_top = -61.611
+margin_right = 192.048
+margin_bottom = -21.611
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighScores" parent="." instance=ExtResource( 8 )]
+margin_left = 749.961
+margin_top = 150.627
+margin_right = 749.961
+margin_bottom = 150.627
 
 [connection signal="pressed" from="YouDied/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="YouDied/Exit" to="." method="_on_Exit_pressed"]

@@ -16,50 +16,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="ColorRect"]
+[node name="TextureButton" type="TextureButton" parent="."]
 margin_left = 0.594604
 margin_top = 1.18921
 margin_right = 206.595
 margin_bottom = 79.1892
 texture_normal = ExtResource( 1 )
 texture_hover = ExtResource( 2 )
-
-[node name="Highscore 1" type="Label" parent="ColorRect"]
-margin_left = 22.0
-margin_top = 84.0
-margin_right = 191.0
-margin_bottom = 98.0
-text = "1) 123467"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Highscore 2" type="Label" parent="ColorRect"]
-margin_left = 22.0
-margin_top = 103.0
-margin_right = 191.0
-margin_bottom = 117.0
-text = "2) 123421312367"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Highscore 3" type="Label" parent="ColorRect"]
-margin_left = 22.0
-margin_top = 121.0
-margin_right = 191.0
-margin_bottom = 135.0
-text = "3) 34632123467"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Highscore 4" type="Label" parent="ColorRect"]
-margin_left = 22.0
-margin_top = 137.0
-margin_right = 191.0
-margin_bottom = 151.0
-text = "4) 92041"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Box" type="VBoxContainer" parent="."]
+margin_left = 38.8913
+margin_top = 79.37
+margin_right = 150.891
+margin_bottom = 147.37
