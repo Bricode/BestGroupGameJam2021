@@ -9,19 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "Save",
+"language": "GDScript",
+"path": "res://Ui/HighscoreWindow/High_score_save.gd"
+}, {
 "base": "Spatial",
 "class": "Weapon",
 "language": "GDScript",
 "path": "res://Player/Weapon.gd"
 } ]
 _global_script_class_icons={
+"Save": "",
 "Weapon": ""
 }
 
 [application]
 
 config/name="BestGroupGameJam2021"
-run/main_scene="res://Levels/Level1.tscn"
+run/main_scene="res://Ui/TitleScreen/Title.tscn"
 config/icon="res://icon.png"
 
 [autoload]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Ui/DeathScreen/DeathScreen.gd" type="Script" id=1]
 [ext_resource path="res://Ui/ButtonTexture/YouDied.png" type="Texture" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Ui/ButtonTexture/NewGame-Hover.png" type="Texture" id=5]
 [ext_resource path="res://Ui/ButtonTexture/Exit-Hover.png" type="Texture" id=6]
 [ext_resource path="res://Ui/ButtonTexture/Exit.png" type="Texture" id=7]
+[ext_resource path="res://Ui/HighscoreWindow/Highscore Window.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Ui/ButtonTexture/AddScore-Hover.png" type="Texture" id=9]
+[ext_resource path="res://Ui/ButtonTexture/AddScore.png" type="Texture" id=10]
 
 [node name="DeathScreen" type="Control"]
 anchor_left = 0.5
@@ -27,10 +30,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -199.0
-margin_top = -262.5
-margin_right = 199.0
-margin_bottom = -149.5
+margin_left = -398.798
+margin_top = -252.398
+margin_right = -0.798248
+margin_bottom = -139.398
+rect_pivot_offset = Vector2( -368.319, -75.0254 )
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 2 )
 texture_hover = ExtResource( 3 )
@@ -69,5 +73,64 @@ texture_hover = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Add_score" type="Control" parent="YouDied"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Currnet" type="Label" parent="YouDied/Add_score"]
+margin_left = 416.815
+margin_top = 127.021
+margin_right = 511.815
+margin_bottom = 141.021
+rect_scale = Vector2( 2, 2 )
+text = "Current: 42069"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="YouDied/Add_score"]
+margin_left = 421.815
+margin_top = 160.803
+margin_right = 516.815
+margin_bottom = 174.803
+rect_scale = Vector2( 2, 2 )
+text = "Add name:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="YouDied/Add_score"]
+margin_left = 417.361
+margin_top = 191.457
+margin_right = 599.361
+margin_bottom = 231.457
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Add_score_button" type="TextureButton" parent="YouDied/Add_score"]
+margin_left = 394.94
+margin_top = 242.486
+margin_right = 541.94
+margin_bottom = 304.486
+rect_scale = Vector2( 1.5, 1.5 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighScores" parent="." instance=ExtResource( 8 )]
+margin_left = 752.206
+margin_top = 24.9113
+margin_right = 752.206
+margin_bottom = 24.9113
+
 [connection signal="pressed" from="YouDied/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="YouDied/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="button_down" from="YouDied/Add_score/Add_score_button" to="." method="_on_Add_score_button_down"]

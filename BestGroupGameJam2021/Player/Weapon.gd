@@ -10,19 +10,21 @@ export var ads_acceleration : float = 0.3
 export var default_fov : float = 70
 export var ads_fov : float = 55
 
-#onready var charges_label = $"/root/World/UI/Label"
+#onready var charge_label = $"/root/World/UI/Label"
 export var raycast_path : NodePath
 export var camera_path : NodePath
 onready var lasermesh = preload("res://Player/LaserMesh.tscn")
 var raycast : RayCast
 var camera : Camera
+
 var current_charges = 0
+
 var can_fire = true
 var reloading = false
 var collider
 var laserReady = false
 func _ready():
-#	current_charges = clip_size
+#	current_charge = clip_size
 	raycast = get_node(raycast_path)
 	camera = get_node(camera_path)
 	
@@ -30,7 +32,7 @@ func _process(delta):
 	if PlayerInfo.weapon == true:
 		visible = true
 		if Input.is_action_pressed("primary_fire") and can_fire:
-			if PlayerInfo.get_charges() > 0 and not reloading:
+			if PlayerInfo.get_charge() > 0 and not reloading:
 				fire()
 			elif not reloading:
 				reload()
@@ -61,7 +63,7 @@ func check_collision():
 func fire():
 	print("Fired weapon")
 	can_fire = false
-	PlayerInfo.change_charges(-1)
+	PlayerInfo.change_charge(-1)
 	$coonan357/AnimationPlayer.play("HandleAction")
 	check_collision()
 	yield(get_tree().create_timer(fire_rate), "timeout")
@@ -71,8 +73,8 @@ func reload():
 	print("Reloading")
 	reloading = true
 	yield(get_tree().create_timer(reload_rate), "timeout")
-	PlayerInfo.change_charges_clip(-1)
-	PlayerInfo.change_charges(100)
+	PlayerInfo.change_charge_clip(-1)
+	PlayerInfo.change_charge(100)
 	reloading = false
 	print("Reload complete")
 
