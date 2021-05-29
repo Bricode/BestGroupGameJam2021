@@ -18,6 +18,6 @@ func _ready():
 func _on_Area_body_shape_entered(body_id, body, body_shape, area_shape):
 	if body.is_in_group("Player"):
 		if PlayerInfo.charge <= 99:
-			PlayerInfo.change_charge(10)
+			PlayerInfo.change_charge(50)
 			PlayerInfo.change_score(10)
 			queue_free()
