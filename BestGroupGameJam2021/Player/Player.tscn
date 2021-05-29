@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Ui/StatsUI.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Ui/Menu/Menu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Ui/crosshair/crosshair.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Player/FlashLight.gd" type="Script" id=8]
-[ext_resource path="res://BlenderModels/Items/FlashLight.gltf" type="PackedScene" id=11]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.75
@@ -56,13 +55,6 @@ spot_range = 15.0
 spot_attenuation = 5.0
 script = ExtResource( 8 )
 
-[node name="PowerDrain" type="Timer" parent="Head/Camera/Weapons/FlashLight"]
-wait_time = 0.5
-autostart = true
-
-[node name="FlashLight2" parent="Head/Camera/Weapons" instance=ExtResource( 11 )]
-transform = Transform( 0.0500691, 0, 0, 0, 0.0500691, 0, 0, 0, 0.0500691, -0.396839, -0.264225, -0.246524 )
-
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 1 )
@@ -97,5 +89,3 @@ camera_path = NodePath("../../../Head/Camera")
 [node name="Ui" parent="." instance=ExtResource( 2 )]
 
 [node name="Menu" parent="." instance=ExtResource( 6 )]
-
-[connection signal="timeout" from="Head/Camera/Weapons/FlashLight/PowerDrain" to="Head/Camera/Weapons/FlashLight" method="_on_PowerDrain_timeout"]
