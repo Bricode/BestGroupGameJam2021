@@ -1,5 +1,8 @@
 extends Control
 
+func _onready():
+	$laserkiwi.visible = true
+
 func _on_Exit_pressed():
 	get_tree().quit()
 	pass # Replace with function body.
@@ -11,3 +14,6 @@ func _on_NewGame_pressed():
 	PlayerInfo.charge = 100
 	get_tree().change_scene("res://Levels/City.tscn")
 
+func _process(delta):
+	if PlayerInfo.konami_code == true:
+		$laserkiwi.visible = false
