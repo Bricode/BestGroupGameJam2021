@@ -37,7 +37,7 @@ one_shot = true
 transform = Transform( -0.35, 0, -5.28485e-08, 0, 0.35, 0, 5.28485e-08, 0, -0.35, 0, 2.247, -0.387 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
-transform = Transform( 0.0857327, 0, 0, 0, 0.0656163, 0, 0, 0, 0.0719635, 0, 2.97764, -0.671544 )
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 2.95667, -0.671544 )
 mesh = SubResource( 3 )
 material/0 = ExtResource( 2 )
 
@@ -48,9 +48,8 @@ spot_range = 13.6689
 spot_angle = 48.1034
 
 [node name="OmniLight2" type="OmniLight" parent="MeshInstance2"]
-transform = Transform( 11.6642, 0, 0, 0, 15.2401, 0, 0, 0, 13.8959, 0, 0.425, -2.097 )
+transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0.438588, 0.298971, -1.57953 )
 light_color = Color( 0.886275, 0.0588235, 0.0588235, 1 )
-light_energy = 3.0
 omni_range = 0.615437
 
 [connection signal="body_entered" from="HitZone" to="." method="_on_HitZone_body_entered"]
