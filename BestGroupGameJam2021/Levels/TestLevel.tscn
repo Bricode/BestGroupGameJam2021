@@ -217,6 +217,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61.8502, 45.4333, 12.023 )
 [node name="WorldEnvironment" parent="." instance=ExtResource( 10 )]
 
 [node name="Enemy_spawn_timer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="Enemy_Spawns" type="Node" parent="."]

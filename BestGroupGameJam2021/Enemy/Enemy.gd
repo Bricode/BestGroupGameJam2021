@@ -1,6 +1,6 @@
 extends KinematicBody
 
-var speed = 150
+var speed = 200
 onready var player = get_parent().get_parent().get_node("Player")
 var health = 3
 var can_hit
@@ -40,7 +40,7 @@ func _process(delta):
 	if is_on_floor():
 		airtime = 15
 	else:
-		airtime -= 0.75
+		airtime -= 50*delta
 	direction.y = airtime*100
 	move_and_slide(direction * delta, Vector3.UP)
 
