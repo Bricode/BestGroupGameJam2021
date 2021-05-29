@@ -5,6 +5,7 @@ var max_health
 var charge
 var max_charge
 var score
+var konami_code
 
 #var weapon = null
 
@@ -18,6 +19,11 @@ func _ready():
 	max_charge = 100
 	score = 0
 	mouse_sensitivity = 0.003
+	konami_code = false
+
+func set_konami_code():
+	print("konami!!!!!!!!!!!!!!!")
+	konami_code = true
 
 func change_health(amount):
 	health += amount
