@@ -2,10 +2,10 @@ extends KinematicBody
 
 var enemy_list = ["res://Enemy/Enemy.tscn"]
 
-export var speed = 4
-export var acceleration = 5
-export var gravity = 0.98
-export var jump_power = 15
+export var speed = 400
+export var acceleration = 150
+export var gravity = 500
+export var jump_power = 10000
 export var mouse_sensitivity = 0.3
 
 onready var head = $Head
@@ -30,9 +30,9 @@ func _physics_process(delta):
 	var head_basis = head.get_global_transform().basis
 	
 	if Input.is_action_pressed("sprint"):
-		speed = 10
+		acceleration = 250
 	else:
-		speed = 4
+		acceleration = 150
 	
 	var direction = Vector3()
 	if Input.is_action_pressed("move_forward"):
@@ -53,7 +53,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y += jump_power
 	
-	velocity = move_and_slide(velocity, Vector3.UP)
+	velocity = move_and_slide(velocity * delta, Vector3.UP)
 	
 	if Input.is_action_just_pressed("primary_fire"):
 		if PlayerInfo.charge > 0:
