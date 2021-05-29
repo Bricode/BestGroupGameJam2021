@@ -10,7 +10,7 @@ func _process(delta):
 func _on_Area_body_entered(body):
 	if body.is_in_group("Enemies"):
 		body.hit_enemy()
-	else:
+	elif not body.is_in_group("Pickup") and not body.is_in_group("Player"):
 		queue_free()
 	
 	if translation.distance_to(player.translation) >= 200:
