@@ -56,7 +56,8 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity * delta, Vector3.UP)
 	
 	if Input.is_action_just_pressed("primary_fire"):
-		if PlayerInfo.charge > 0:
+		if PlayerInfo.charge >= 10:
+			PlayerInfo.change_charge(-10)
 			var lazer = load("res://Player/LaserMesh.tscn").instance()
 			lazer.move = -($Head.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
 			lazer.look_at(lazer.move,Vector3.UP)

@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Ui/StatsUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player/GunCamera.gd" type="Script" id=4]
 [ext_resource path="res://Ui/Menu/Menu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Ui/crosshair/crosshair.tscn" type="PackedScene" id=7]
 
@@ -31,6 +30,8 @@ light_color = Color( 1, 0, 0, 1 )
 light_specular = 0.84
 spot_range = 15.0
 spot_attenuation = 5.0
+
+[node name="Weapons" type="Spatial" parent="Head/Camera"]
 
 [node name="Spatial" type="Spatial" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
@@ -61,8 +62,6 @@ render_target_update_mode = 3
 [node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
 cull_mask = 2
 near = 0.01
-script = ExtResource( 4 )
-camera_path = NodePath("../../../Head/Camera")
 
 [node name="crosshair" parent="." instance=ExtResource( 7 )]
 
