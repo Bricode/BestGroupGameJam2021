@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Ui/StatsUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://BlenderModels/Kiwi/Kiwi Beak.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Ui/Menu/Menu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Ui/crosshair/crosshair.tscn" type="PackedScene" id=7]
 
@@ -22,9 +23,12 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919402, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.893849, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.382953, 0 )
 cull_mask = 1048573
 current = true
+
+[node name="Kiwi Beak2" parent="Head/Camera" instance=ExtResource( 4 )]
+transform = Transform( -6.55671e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.55671e-09, 0, -0.126, -0.497 )
 
 [node name="FlashLight" type="SpotLight" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6 )
