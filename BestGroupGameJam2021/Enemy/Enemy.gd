@@ -5,7 +5,7 @@ onready var player = get_parent().get_parent().get_node("Player")
 var health = 3
 var airtime = 2
 
-onready var blood = preload("res://ParticleEffects/Oil.tscn")
+onready var blood = preload("res://ParticleEffects/Spark.tscn")
 
 
 func hit_enemy():
@@ -15,9 +15,9 @@ func hit_enemy():
 	get_parent().add_child(b)
 	b.set_emitting(true)
 	if health <= 0:
+		get_parent().get_parent().get_node("Enemy_Spawns").number_of_enemys -= 1
 		PlayerInfo.change_score(100)
 		queue_free()
-		print("Killed " + filename)
 
 func hit_player():
 	print("hit")
@@ -48,7 +48,7 @@ func _process(delta):
 
 func _on_HitZone_body_entered(body):
 	if body.is_in_group("Player") and $HitTimer.is_stopped():
-		$HitTimer.start(1)
+		$HitTimer.start(0.1)
 
 func _on_HitTimer_timeout():
 	if $HitZone.overlaps_body(player):

@@ -61,6 +61,28 @@ func _physics_process(delta):
 			var lazer = load("res://Player/LaserMesh.tscn").instance()
 			lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
 			lazer.look_at(lazer.move,Vector3.UP)
-			lazer.translation = global_transform.origin
+			lazer.translation = global_transform.origin + Vector3(0,0.5,0)
 			get_parent().get_node("Lazers").add_child(lazer)
+			if PlayerInfo.score >= 1100:
+				lazer = load("res://Player/LaserMesh.tscn").instance()
+				lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
+				lazer.look_at(lazer.move,Vector3.UP)
+				lazer.translation = global_transform.origin- Vector3(0,0.5,0)
+				get_parent().get_node("Lazers").add_child(lazer)
+				if PlayerInfo.score >= 5100:
+					lazer = load("res://Player/LaserMesh.tscn").instance()
+					lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
+					lazer.look_at(lazer.move,Vector3.UP)
+					lazer.translation = global_transform.origin + Vector3(0,1.5,0)
+					get_parent().get_node("Lazers").add_child(lazer)
+					if PlayerInfo.score >= 10100:
+						lazer = load("res://Player/LaserMesh.tscn").instance()
+						lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
+						lazer.look_at(lazer.move,Vector3.UP)
+						lazer.translation = global_transform.origin- Vector3(0,1.5,0)
+						get_parent().get_node("Lazers").add_child(lazer)
+	
+	if PlayerInfo.konami_code:
+		PlayerInfo.score += 10
+		PlayerInfo.charge = 100
 

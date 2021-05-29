@@ -191,7 +191,7 @@ omni_range = 8.38106
 [node name="Enemys" type="Node" parent="."]
 
 [node name="Enemy_spawn_timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.5
 autostart = true
 
 [node name="Enemy_Spawns" type="Node" parent="."]
