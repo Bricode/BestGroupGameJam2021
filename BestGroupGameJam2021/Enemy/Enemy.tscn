@@ -4,11 +4,10 @@
 [ext_resource path="res://Materials/GreenGlowing.tres" type="Material" id=2]
 [ext_resource path="res://BlenderModels/Kangaroo/Kangaroo.tscn" type="PackedScene" id=3]
 
-[sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.4, 0.3, 0.3 )
+[sub_resource type="CapsuleShape" id=1]
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.4, 0.6, 0.4 )
+extents = Vector3( 1.36331, 4.67558, 1.87302 )
 
 [sub_resource type="SphereMesh" id=4]
 

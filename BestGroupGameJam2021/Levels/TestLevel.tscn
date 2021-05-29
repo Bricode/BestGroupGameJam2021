@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Enemy/Enemy_spawns.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Materials/GreenGlowing.tres" type="Material" id=4]
 [ext_resource path="res://Materials/BlueGlowing.tres" type="Material" id=5]
 [ext_resource path="res://Materials/PurpleGlowing.tres" type="Material" id=6]
-[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://GameModels/Items/HuhuGrub.tscn" type="PackedScene" id=11]
 
 [sub_resource type="BoxShape" id=1]
@@ -191,11 +190,9 @@ omni_range = 8.38106
 
 [node name="Enemys" type="Node" parent="."]
 
-[node name="Enemy" parent="Enemys" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.3683, 29.587, 2.27412 )
-
 [node name="Enemy_spawn_timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 2.0
+autostart = true
 
 [node name="Enemy_Spawns" type="Node" parent="."]
 script = ExtResource( 1 )
