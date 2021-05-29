@@ -10,8 +10,8 @@ extents = Vector3( 1, 1, 4.16444 )
 
 [node name="HuhuGrub" type="KinematicBody"]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 4
+collision_mask = 4
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
