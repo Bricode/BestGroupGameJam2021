@@ -24,14 +24,14 @@ func _on_Exit_pressed():
 
 func _on_NewGame_pressed():
 #	PlayerInfo.health = 100 / PlayerInfo.difficulty
-#	PlayerInfo.charges = 100 / PlayerInfo.difficulty
-#	PlayerInfo.charges_clip = 100 / PlayerInfo.difficulty
+#	PlayerInfo.charge = 100 / PlayerInfo.difficulty
+#	PlayerInfo.charge_clip = 100 / PlayerInfo.difficulty
 #	PlayerInfo.power = 100 / PlayerInfo.difficulty
 	PlayerInfo.reset_level()
 	PlayerInfo.weapon = false
 	PlayerInfo.health = 100
-	PlayerInfo.charges = 100
-	PlayerInfo.charges_clip = 100
+	PlayerInfo.charge = 100
+	PlayerInfo.charge_clip = 100
 	PlayerInfo.power = 100
 	get_tree().change_scene("res://Levels/Level1.tscn")
 #	print("yes")
