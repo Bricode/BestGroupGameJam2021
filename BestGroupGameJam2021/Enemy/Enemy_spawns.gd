@@ -3,7 +3,7 @@ extends Node
 var number_of_enemys = 0
 
 func _on_Enemy_spawn_timer_timeout():
-	if number_of_enemys < 25:
+	if number_of_enemys < 15:
 		number_of_enemys += 1
 		var enemy_scene = load("res://Enemy/Enemy.tscn").instance()
 		enemy_scene.transform.origin = get_child(randi() % get_child_count()).transform.origin
