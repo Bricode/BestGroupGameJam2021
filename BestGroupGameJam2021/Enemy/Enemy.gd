@@ -6,7 +6,7 @@ var health = 3
 var can_hit
 var airtime = 2
 
-onready var blood = preload("res://ParticleEffects/SnailBlood.tscn")
+onready var blood = preload("res://ParticleEffects/Oil.tscn")
 
 
 func hit_enemy():
@@ -23,6 +23,7 @@ func hit_player():
 	print("hit")
 	PlayerInfo.change_health(-10)
 	if PlayerInfo.health <= 0:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 		get_tree().change_scene("res://Ui/DeathScreen/DeathScreen.tscn")
 
 func _process(delta):

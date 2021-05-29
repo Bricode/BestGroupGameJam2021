@@ -10,7 +10,7 @@ extends Control
 func _ready():
 	get_tree().set_auto_accept_quit(false)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-	pass # Replace with function body.
+	#pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -32,26 +32,26 @@ func _ready():
 	weapon = false
 	textevent = " "
 
-func change_difficulty(chargesunt):
-	difficulty = chargesunt
+func change_difficulty(amount):
+	difficulty = amount
 
-func change_health(chargesunt):
-	health += chargesunt - (difficulty * 10)
+func change_health(amount):
+	health += amount - (difficulty * 10)
 	health = clamp(health, 0, max_health)
 
-func change_charges(chargesunt):
-	charges += chargesunt
+func change_charges(amount):
+	charges += amount
 	charges = clamp(charges, 0, max_charges)
 
-func change_power(chargesunt):
-	power += chargesunt - (difficulty * 10)
+func change_power(amount):
+	power += amount - (difficulty * 10)
 	power = clamp(power, 0, max_power)
 
-func change_max_charges(chargesunt):
-	max_charges = chargesunt
+func change_max_charges(amount):
+	max_charges = amount
 
-func change_max_power(chargesunt):
-	max_power = chargesunt
+func change_max_power(amount):
+	max_power = amount
 
 func get_health():
 	return health
@@ -65,8 +65,8 @@ func get_charges():
 func has_charges():
 	return charges > 0
 
-func change_charges_clip(chargesunt):
-	charges_clip += chargesunt
+func change_charges_clip(amount):
+	charges_clip += amount
 
 func has_charges_clip():
 	return charges_clip > 0
@@ -88,8 +88,8 @@ func reset_level():
 	current_level = 1
 
 
-func change_mouse_sensitivity(chargesunt):
-	mouse_sensitivity = chargesunt
+func change_mouse_sensitivity(amount):
+	mouse_sensitivity = amount
 
 func get_mouse_sensitivity():
 	return mouse_sensitivity
