@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://LevelParts/Buildings/4.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://GameModels/LightPost.fbx" type="PackedScene" id=2]
@@ -44,9 +44,9 @@ extents = Vector3( 4.86944, 15.0316, 8.9078 )
 [sub_resource type="BoxShape" id=26]
 extents = Vector3( 6.57629, 10.8363, 4.77127 )
 
-[sub_resource type="SphereMesh" id=15]
+[sub_resource type="SphereMesh" id=11]
 
-[sub_resource type="SpatialMaterial" id=16]
+[sub_resource type="SpatialMaterial" id=12]
 emission_enabled = true
 emission = Color( 1, 1, 1, 1 )
 emission_energy = 1.0
@@ -71,6 +71,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.931114, 3.543, -5.71978 )
 
 [node name="Floor" type="StaticBody" parent="."]
 transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.955627, 0 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16649, 0 )
@@ -142,7 +144,7 @@ shape = SubResource( 26 )
 [node name="Spatial" type="Spatial" parent="."]
 
 [node name="11" type="MeshInstance" parent="Spatial"]
-transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 44.65, 0, -16.5681 )
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 44.6354, -7.62939e-06, -16.4326 )
 mesh = ExtResource( 9 )
 material/0 = null
 material/1 = null
@@ -904,8 +906,8 @@ script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost/SpotLight"]
 transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
 
 [node name="LightPost2" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.149, 0.297263, -28.5812 )
@@ -920,8 +922,8 @@ script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost2/SpotLight"]
 transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
 
 [node name="LightPost3" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38387, 0.297263, -28.5812 )
@@ -936,8 +938,8 @@ script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost3/SpotLight"]
 transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
 
 [node name="LightPost4" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6493, 0.297263, 22.2037 )
@@ -952,8 +954,8 @@ script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost4/SpotLight"]
 transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
 
 [node name="LightPost5" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9995, 0.297263, -28.5812 )
@@ -968,8 +970,8 @@ script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost5/SpotLight"]
 transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
 
 [node name="LightPost6" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40.398, 0.594525, -28.087 )
@@ -984,8 +986,8 @@ script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost6/SpotLight"]
 transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
 
 [node name="LightPost7" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.6479, 0.297263, -4.1191 )
@@ -1000,8 +1002,8 @@ script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost7/SpotLight"]
 transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
 
 [node name="LightPost8" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1247, 0.297263, -3.9659 )
@@ -1016,8 +1018,8 @@ script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost8/SpotLight"]
 transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
 
 [node name="LightPost9" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9182, 0.297263, -3.87595 )
@@ -1032,8 +1034,8 @@ script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost9/SpotLight"]
 transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
 
 [node name="LightPost10" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.8193, 0.297263, 40.6398 )
@@ -1048,8 +1050,8 @@ script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost10/SpotLight"]
 transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
 
 [node name="LightPost11" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1455, 0.297263, 41.7399 )
@@ -1064,8 +1066,8 @@ script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost11/SpotLight"]
 transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
 
 [node name="LightPost12" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40.568, 0.297263, -13.399 )
@@ -1080,8 +1082,8 @@ script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost12/SpotLight"]
 transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
 
 [node name="Enemys" type="Node" parent="."]
 
@@ -1133,9 +1135,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5875, 30.4835, -21.5855 )
 
 [node name="Lazers" type="Node" parent="."]
 
-[node name="HuhuGrub" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 21.6402, 6.23396, -7.65663 )
-
 [node name="Car2" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.1528, 0.689768, 6.67796 )
 
@@ -1157,12 +1156,13 @@ mesh = SubResource( 28 )
 skin = SubResource( 29 )
 material/0 = null
 
-[node name="Area" type="Area" parent="Car2/MeshInstance"]
+[node name="HuhuGrub2" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4938, 0.789768, 35.9733 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Car2/MeshInstance/Area"]
 shape = SubResource( 30 )
 
-[node name="6x6 knocked over" parent="Car2" instance=ExtResource( 13 )]
-transform = Transform( 0.367998, 0, 0, 0, 0.367998, 0, 0, 0, 0.367998, -0.566868, 0.581049, -0.406488 )
+[node name="HuhuGrub4" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1312, 0.789768, -35.0978 )
 
 [connection signal="timeout" from="Enemy_spawn_timer" to="Enemy_Spawns" method="_on_Enemy_spawn_timer_timeout"]
