@@ -27,12 +27,12 @@ cull_mask = 1048573
 
 [node name="FlashLight" type="SpotLight" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6 )
-light_color = Color( 1, 0.996078, 0.682353, 1 )
+light_color = Color( 0.92549, 0.917647, 0.12549, 1 )
 light_energy = 0.5
 light_specular = 0.84
-spot_range = 67.3677
+spot_range = 25.23
 spot_attenuation = 5.0
-spot_angle = 80.7875
+spot_angle = 46.4063
 
 [node name="Spatial" type="Spatial" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
