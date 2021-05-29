@@ -23,6 +23,7 @@ func hit_player():
 	print("hit")
 	PlayerInfo.change_health(-10)
 	if PlayerInfo.health <= 0:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 		get_tree().change_scene("res://Ui/DeathScreen/DeathScreen.tscn")
 
 func _process(delta):
