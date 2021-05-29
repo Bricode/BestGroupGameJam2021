@@ -16,9 +16,11 @@ func _process(delta):
 	
 	if (PlayerInfo.konami_code == false) :
 		if((rand_range(0,100) < 99) && (counter == 0)):
-			hide()		
+			hide()
+			$MeshInstance.visible = false
 		else:		
 			show()
+			$MeshInstance.visible = true
 			counter+= 1		
 		if (counter == 50):
 			counter = 0
