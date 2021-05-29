@@ -30,6 +30,7 @@ func _on_NewGame_pressed():
 #	PlayerInfo.power = 100 / PlayerInfo.difficulty
 	PlayerInfo.reset_level()
 	PlayerInfo.weapon = true
+	PlayerInfo.score = 0
 	PlayerInfo.health = 100
 	PlayerInfo.charge = 100
 	#PlayerInfo.charge_clip = 1

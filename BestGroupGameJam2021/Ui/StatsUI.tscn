@@ -157,4 +157,24 @@ __meta__ = {
 one_shot = true
 autostart = true
 
+[node name="Score" type="Label" parent="."]
+margin_left = 343.09
+margin_top = 7.44545
+margin_right = 383.09
+margin_bottom = 21.4454
+text = "1234"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="Score"]
+margin_left = -40.0904
+margin_top = -0.44545
+margin_right = -0.0904236
+margin_bottom = 13.5546
+text = "Score:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="timeout" from="TextEvent/Timer" to="." method="_on_Timer_timeout"]

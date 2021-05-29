@@ -12,6 +12,7 @@ var max_power
 var current_level
 var weapon
 var textevent
+var score
 
 #var weapon = null
 
@@ -24,9 +25,10 @@ func _ready():
 	charge = 100
 	power = 100
 	max_power = 100
-	max_charge = 1
-	charge_clip = 1
-	clip_size = 1
+	max_charge = 100
+	score = 0
+	#charge_clip = 1
+	#clip_size = 1
 	difficulty = 0
 	mouse_sensitivity = 0.003
 	weapon = false
@@ -100,3 +102,7 @@ func get_mouse_sensitivity():
 
 func get_textevent():
 	return textevent
+
+func change_score(amount):
+	score += amount
+
