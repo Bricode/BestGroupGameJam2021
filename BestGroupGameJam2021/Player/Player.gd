@@ -81,7 +81,8 @@ func _physics_process(delta):
 						lazer.look_at(lazer.move,Vector3.UP)
 						lazer.translation = global_transform.origin- Vector3(0,1.5,0)
 						get_parent().get_node("Lazers").add_child(lazer)
-	if PlayerInfo.konami_code == true:
+	
+	if PlayerInfo.konami_code:
 		PlayerInfo.score += 10
 		PlayerInfo.charge = 100
 
