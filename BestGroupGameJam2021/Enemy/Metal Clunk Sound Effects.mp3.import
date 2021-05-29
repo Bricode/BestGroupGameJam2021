@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Metal Clunk Sound Effects.mp3-1cdfdc6a7315c587fd004ae98bccf354.mp3str"
+
+[deps]
+
+source_file="res://Enemy/Metal Clunk Sound Effects.mp3"
+dest_files=[ "res://.import/Metal Clunk Sound Effects.mp3-1cdfdc6a7315c587fd004ae98bccf354.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
