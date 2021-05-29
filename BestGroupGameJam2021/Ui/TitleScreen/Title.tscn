@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Ui/ButtonTexture/AngryManLogo.png" type="Texture" id=1]
-[ext_resource path="res://Ui/HighscoreWindow/Highscore Window.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ui/ButtonTexture/NewGame.png" type="Texture" id=4]
 [ext_resource path="res://Ui/ButtonTexture/Exit.png" type="Texture" id=5]
 [ext_resource path="res://Ui/ButtonTexture/NewGame-Hover.png" type="Texture" id=6]
@@ -50,12 +49,6 @@ texture_hover = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Node2D" parent="Logo/NewGame" instance=ExtResource( 2 )]
-margin_left = 373.443
-margin_top = -1.16206
-margin_right = 373.443
-margin_bottom = -1.16206
 
 [node name="Exit" type="TextureButton" parent="Logo"]
 margin_left = 167.0
