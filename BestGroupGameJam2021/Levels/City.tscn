@@ -49,20 +49,12 @@ albedo_color = Color( 0.0980392, 0.27451, 0.972549, 1 )
 [sub_resource type="CubeMesh" id=12]
 material = SubResource( 11 )
 
-[sub_resource type="Skin" id=14]
+[sub_resource type="Skin" id=13]
 
-[sub_resource type="BoxShape" id=13]
+[sub_resource type="BoxShape" id=14]
 extents = Vector3( 1.18143, 1.45828, 1.12893 )
 
 [node name="Spatial2" type="Spatial"]
-
-[node name="6" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13546, 0, 0 )
-mesh = ExtResource( 10 )
-material/0 = null
-material/1 = null
-material/2 = null
-material/3 = null
 
 [node name="Player" parent="." instance=ExtResource( 14 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.92065, -6.85014 )
@@ -879,6 +871,14 @@ material/1 = null
 material/2 = null
 material/3 = null
 
+[node name="16" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13546, 0, 0 )
+mesh = ExtResource( 10 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
 [node name="Spatial2" type="Spatial" parent="."]
 
 [node name="LightPost" parent="Spatial2" instance=ExtResource( 2 )]
@@ -1002,10 +1002,10 @@ spot_range = 8.24863
 spot_angle = 25.2262
 script = ExtResource( 3 )
 
-[node name="LightPost" parent="." instance=ExtResource( 2 )]
+[node name="LightPost12" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40.568, 0.297263, -13.399 )
 
-[node name="SpotLight" type="SpotLight" parent="LightPost"]
+[node name="SpotLight" type="SpotLight" parent="Spatial2/LightPost12"]
 transform = Transform( 1, 0, 0, 0, 0.0526323, 0.998614, 0, -0.998614, 0.0526323, 0, 7.07609, -1.29856 )
 light_energy = 16.0
 light_specular = 0.0
@@ -1071,27 +1071,27 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.1, -1.5 )
 can_sleep = false
 
 [node name="HuhuGrub2" parent="Car2" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.1, 1.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66.6466, 0.1, 29.2953 )
 can_sleep = false
 
 [node name="HuhuGrub3" parent="Car2" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.1, -1.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.1, 29.0734 )
 can_sleep = false
 
 [node name="HuhuGrub4" parent="Car2" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.1, 1.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.284, 0.1, -41.7758 )
 can_sleep = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Car2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.984782, 0 )
 mesh = SubResource( 12 )
-skin = SubResource( 14 )
+skin = SubResource( 13 )
 material/0 = null
 
 [node name="Area" type="Area" parent="Car2/MeshInstance"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Car2/MeshInstance/Area"]
-shape = SubResource( 13 )
+shape = SubResource( 14 )
 
 [node name="6x6 knocked over" parent="Car2" instance=ExtResource( 13 )]
 transform = Transform( 0.367998, 0, 0, 0, 0.367998, 0, 0, 0, 0.367998, -0.566868, 0.581049, -0.406488 )
