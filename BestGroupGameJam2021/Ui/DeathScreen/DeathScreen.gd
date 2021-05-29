@@ -3,6 +3,7 @@ extends Control
 var current = 0
 
 func _ready():
+	current = PlayerInfo.get_score()
 	$YouDied/Add_score/Currnet.text = "Current:" + str(current)
 	show_high_score() 
 
