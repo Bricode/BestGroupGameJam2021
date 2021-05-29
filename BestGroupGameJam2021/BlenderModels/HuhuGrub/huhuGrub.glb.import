@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/StoneSlope.glb-dac58898cb9664d6bf1c21da36eafa85.scn"
+path="res://.import/huhuGrub.glb-942bdbd8bf11b9c2918a62a41bf6de27.scn"
 
 [deps]
 
-source_file="res://BlenderModels/Slopes/StoneSlope.glb"
-dest_files=[ "res://.import/StoneSlope.glb-dac58898cb9664d6bf1c21da36eafa85.scn" ]
+source_file="res://BlenderModels/HuhuGrub/huhuGrub.glb"
+dest_files=[ "res://.import/huhuGrub.glb-942bdbd8bf11b9c2918a62a41bf6de27.scn" ]
 
 [params]
 
@@ -16,7 +16,7 @@ nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
-nodes/use_legacy_names=true
+nodes/use_legacy_names=false
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
