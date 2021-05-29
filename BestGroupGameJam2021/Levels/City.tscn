@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://LevelParts/Buildings/4.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://GameModels/LightPost.fbx" type="PackedScene" id=2]
@@ -7,10 +7,12 @@
 [ext_resource path="res://LevelParts/Buildings/7.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://Enemy/Enemy_spawns.gd" type="Script" id=6]
 [ext_resource path="res://LevelParts/Buildings/3.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://GameModels/Items/HuhuGrub.tscn" type="PackedScene" id=8]
 [ext_resource path="res://LevelParts/Buildings/11.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://LevelParts/Buildings/6.obj" type="ArrayMesh" id=10]
 [ext_resource path="res://LevelParts/Buildings/5.obj" type="ArrayMesh" id=11]
 [ext_resource path="res://LevelParts/Buildings/2.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://BlenderModels/Cars/6x6/6x6 knocked over.glb" type="PackedScene" id=13]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=14]
 [ext_resource path="res://LevelParts/Materials/TexturesCom_Asphalt_BrokenRoad_2x2_1K_albedo.png" type="Texture" id=15]
 
@@ -40,6 +42,17 @@ extents = Vector3( 4.86944, 15.0316, 8.9078 )
 
 [sub_resource type="BoxShape" id=10]
 extents = Vector3( 6.57629, 10.8363, 4.77127 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0.0980392, 0.27451, 0.972549, 1 )
+
+[sub_resource type="CubeMesh" id=12]
+material = SubResource( 11 )
+
+[sub_resource type="Skin" id=14]
+
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 1.18143, 1.45828, 1.12893 )
 
 [node name="Spatial2" type="Spatial"]
 
@@ -1048,3 +1061,36 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9881, 30.4835, -21.5855 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5875, 30.4835, -21.5855 )
 
 [node name="Lazers" type="Node" parent="."]
+
+[node name="Car2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.1528, 0.689768, 6.67796 )
+
+[node name="HuhuGrub" parent="Car2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.1, -1.5 )
+can_sleep = false
+
+[node name="HuhuGrub2" parent="Car2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.1, 1.5 )
+can_sleep = false
+
+[node name="HuhuGrub3" parent="Car2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.1, -1.5 )
+can_sleep = false
+
+[node name="HuhuGrub4" parent="Car2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.1, 1.5 )
+can_sleep = false
+
+[node name="MeshInstance" type="MeshInstance" parent="Car2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.984782, 0 )
+mesh = SubResource( 12 )
+skin = SubResource( 14 )
+material/0 = null
+
+[node name="Area" type="Area" parent="Car2/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Car2/MeshInstance/Area"]
+shape = SubResource( 13 )
+
+[node name="6x6 knocked over" parent="Car2" instance=ExtResource( 13 )]
+transform = Transform( 0.367998, 0, 0, 0, 0.367998, 0, 0, 0, 0.367998, -0.566868, 0.581049, -0.406488 )
