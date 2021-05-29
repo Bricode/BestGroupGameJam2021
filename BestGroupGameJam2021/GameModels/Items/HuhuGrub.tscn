@@ -6,6 +6,7 @@
 [sub_resource type="BoxShape" id=1]
 
 [sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.99424, 0.855272, 0.985833 )
 
 [node name="HuhuGrub" type="KinematicBody"]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )

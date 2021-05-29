@@ -1144,9 +1144,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.284, 0.1, -41.7758 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Car2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.984782, 0 )
-mesh = SubResource( 14 )
-skin = SubResource( 15 )
-material/0 = null
 
 [node name="WorldEnvironment" parent="." instance=ExtResource( 13 )]
 
