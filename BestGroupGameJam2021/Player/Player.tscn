@@ -6,9 +6,6 @@
 [ext_resource path="res://Ui/Menu/Menu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Ui/crosshair/crosshair.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Player/FlashLight.gd" type="Script" id=8]
-[ext_resource path="res://ParticleEffects/FlameOrange.tscn" type="PackedScene" id=9]
-[ext_resource path="res://ParticleEffects/FlameRed.tscn" type="PackedScene" id=10]
-[ext_resource path="res://BlenderModels/Items/FlashLight.gltf" type="PackedScene" id=11]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.75
