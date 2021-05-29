@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	$HealthBar.max_value = PlayerInfo.max_health
-	$PowerBar.max_value = PlayerInfo.max_power
+	$ChargeBar.max_value = PlayerInfo.max_charge
 
 func _process(delta):
 	$HealthBar.value = PlayerInfo.health
