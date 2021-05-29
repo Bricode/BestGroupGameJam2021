@@ -30,6 +30,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27295, 0 )
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.601966, -17.5766 )
 
 [node name="Rhino" parent="Node" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.18903, 0, -15.6064 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.18903, 1, -15.6064 )
 
 [node name="Lazers" type="Node" parent="."]
