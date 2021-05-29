@@ -6,7 +6,7 @@ var health = 3
 var can_hit
 var airtime = 2
 
-onready var blood = preload("res://ParticleEffects/SnailBlood.tscn")
+onready var blood = preload("res://ParticleEffects/Oil.tscn")
 
 
 func hit_enemy():
