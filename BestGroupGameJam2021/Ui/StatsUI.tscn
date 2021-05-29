@@ -48,6 +48,7 @@ __meta__ = {
 }
 
 [node name="ChargesCount" type="Label" parent="."]
+visible = false
 margin_left = 57.0092
 margin_top = 45.2941
 margin_right = 92.0092
@@ -58,6 +59,7 @@ __meta__ = {
 }
 
 [node name="Charges" type="Label" parent="."]
+visible = false
 margin_left = 5.3328
 margin_top = 44.1497
 margin_right = 55.3328
@@ -115,6 +117,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ChargeBar" type="ProgressBar" parent="."]
+margin_left = 48.75
+margin_top = 23.5
+margin_right = 176.75
+margin_bottom = 39.5
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 2 )
+value = 10.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Charge" type="Label" parent="ChargeBar"]
+margin_left = -43.75
+margin_top = 2.5
+margin_right = -1.75
+margin_bottom = 16.5
+text = "Charge"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextEvent" type="Label" parent="."]
 visible = false
 anchor_left = 0.5
@@ -131,5 +156,25 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="TextEvent"]
 one_shot = true
 autostart = true
+
+[node name="Score" type="Label" parent="."]
+margin_left = 343.09
+margin_top = 7.44545
+margin_right = 383.09
+margin_bottom = 21.4454
+text = "1234"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="Score"]
+margin_left = -40.0904
+margin_top = -0.44545
+margin_right = -0.0904236
+margin_bottom = 13.5546
+text = "Score:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="timeout" from="TextEvent/Timer" to="." method="_on_Timer_timeout"]

@@ -1,6 +1,6 @@
 # BestGroupGameJam2021
 
-In the far future, New Zealand and Australia find themselves at oods. 
+In the far future, New Zealand and Australia find themselves at odds. 
 A rogue nuclear warhead detonates in the auckland CBD. 
 As a kiwi living in Auckland zoo, your life is changed forever when you bite into a green glowing huhu grub and your eyes begin to glow bright red. 
 Lazers burst forth from your eyes as you become the first of the lazer kiwi's. 
