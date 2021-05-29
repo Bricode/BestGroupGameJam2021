@@ -59,7 +59,7 @@ func _physics_process(delta):
 		if PlayerInfo.charge >= 10:
 			PlayerInfo.change_charge(-10)
 			var lazer = load("res://Player/LaserMesh.tscn").instance()
-			lazer.move = -($Head.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
+			lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
 			lazer.look_at(lazer.move,Vector3.UP)
 			lazer.translation = global_transform.origin
 			get_parent().get_node("Lazers").add_child(lazer)

@@ -4,13 +4,12 @@
 [ext_resource path="res://Materials/GreenGlowing.tres" type="Material" id=2]
 [ext_resource path="res://BlenderModels/Kangaroo/Kangaroo.tscn" type="PackedScene" id=3]
 
-[sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.4, 0.3, 0.3 )
+[sub_resource type="CapsuleShape" id=1]
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.4, 0.6, 0.4 )
+extents = Vector3( 1.36331, 4.67558, 1.87302 )
 
-[sub_resource type="SphereMesh" id=4]
+[sub_resource type="SphereMesh" id=3]
 
 [node name="Enemy" type="KinematicBody" groups=[
 "Enemies",
@@ -39,7 +38,7 @@ transform = Transform( -0.35, 0, -5.28485e-08, 0, 0.35, 0, 5.28485e-08, 0, -0.35
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
 transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 2.95667, -0.671544 )
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 material/0 = ExtResource( 2 )
 
 [node name="OmniLight" type="SpotLight" parent="MeshInstance2"]

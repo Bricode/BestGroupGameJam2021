@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Ui/ButtonTexture/AngryManLogo.png" type="Texture" id=1]
+[ext_resource path="res://Ui/ButtonTexture/Title - Hover.png" type="Texture" id=1]
+[ext_resource path="res://laserkiwi.jpg" type="Texture" id=2]
+[ext_resource path="res://Ui/ButtonTexture/Title.png" type="Texture" id=3]
 [ext_resource path="res://Ui/ButtonTexture/NewGame.png" type="Texture" id=4]
 [ext_resource path="res://Ui/ButtonTexture/Exit.png" type="Texture" id=5]
 [ext_resource path="res://Ui/ButtonTexture/NewGame-Hover.png" type="Texture" id=6]
+[ext_resource path="res://boiger_redix.png" type="Texture" id=7]
 [ext_resource path="res://Ui/ButtonTexture/Exit-Hover.png" type="Texture" id=9]
-[ext_resource path="res://Ui/ButtonTexture/AngryManLogo-Hover.png" type="Texture" id=10]
 [ext_resource path="res://Ui/TitleScreen/TitleScreen.gd" type="Script" id=11]
 
 [node name="TitleScreen" type="Control"]
@@ -23,26 +25,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="boiger_redix2" type="Sprite" parent="."]
+position = Vector2( 262.149, 495.184 )
+scale = Vector2( 0.652682, 0.571813 )
+texture = ExtResource( 7 )
+
+[node name="boiger_redix4" type="Sprite" parent="."]
+position = Vector2( 263.483, 165.479 )
+scale = Vector2( 0.652682, 0.571813 )
+texture = ExtResource( 7 )
+
+[node name="boiger_redix" type="Sprite" parent="."]
+position = Vector2( 764.048, 495.184 )
+scale = Vector2( 0.652682, 0.571813 )
+texture = ExtResource( 7 )
+
+[node name="boiger_redix3" type="Sprite" parent="."]
+position = Vector2( 764.048, 165.479 )
+scale = Vector2( 0.652682, 0.571813 )
+texture = ExtResource( 7 )
+
+[node name="laserkiwi" type="Sprite" parent="."]
+position = Vector2( 511.29, 277.912 )
+scale = Vector2( 0.854305, 0.835106 )
+texture = ExtResource( 2 )
+
 [node name="Logo" type="TextureButton" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -216.0
-margin_top = -229.5
-margin_right = 232.0
-margin_bottom = -114.5
-texture_normal = ExtResource( 1 )
-texture_hover = ExtResource( 10 )
+margin_left = -288.081
+margin_top = -301.581
+margin_right = 864.919
+margin_bottom = -165.581
+texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NewGame" type="TextureButton" parent="Logo"]
-margin_left = 112.0
-margin_top = 120.0
-margin_right = 326.0
-margin_bottom = 198.0
+[node name="NewGame" type="TextureButton" parent="."]
+margin_left = 408.0
+margin_top = 209.188
+margin_right = 622.0
+margin_bottom = 287.188
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 6 )
@@ -50,11 +77,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Exit" type="TextureButton" parent="Logo"]
-margin_left = 167.0
-margin_top = 196.0
-margin_right = 381.0
-margin_bottom = 274.0
+[node name="Exit" type="TextureButton" parent="."]
+margin_left = 461.665
+margin_top = 282.518
+margin_right = 675.665
+margin_bottom = 360.518
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 9 )
@@ -62,5 +89,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Logo/NewGame" to="." method="_on_NewGame_pressed"]
-[connection signal="pressed" from="Logo/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
