@@ -77,6 +77,7 @@ margin_bottom = 20.5
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 value = 10.0
+percent_visible = false
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -92,31 +93,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PowerBar" type="ProgressBar" parent="."]
-visible = false
-margin_left = 48.75
-margin_top = 23.5
-margin_right = 176.75
-margin_bottom = 39.5
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 2 )
-value = 10.0
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Power" type="Label" parent="PowerBar"]
-visible = false
-margin_left = -43.75
-margin_top = 2.5
-margin_right = -1.75
-margin_bottom = 16.5
-text = "Power"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="ChargeBar" type="ProgressBar" parent="."]
 margin_left = 48.75
 margin_top = 23.5
@@ -125,6 +101,7 @@ margin_bottom = 39.5
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 2 )
 value = 10.0
+percent_visible = false
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false

@@ -3,7 +3,6 @@ extends KinematicBody
 var speed = 200
 onready var player = get_parent().get_parent().get_node("Player")
 var health = 3
-var can_hit
 var airtime = 2
 
 onready var blood = preload("res://ParticleEffects/Oil.tscn")
@@ -36,7 +35,7 @@ func _process(delta):
 	var direction = -player.transform.origin.direction_to(transform.origin) *speed
 	var player_vec3 = player.transform.origin
 	var enemy_vec3 = transform.origin
-	if Vector2(player_vec3.x,player_vec3.z).distance_to(Vector2(enemy_vec3.x,enemy_vec3.z)) <= 2:
+	if Vector2(player_vec3.x,player_vec3.z).distance_to(Vector2(enemy_vec3.x,enemy_vec3.z)) <= 3:
 		direction = Vector3(0,0,0)
 	if is_on_floor():
 		airtime = 15
@@ -47,14 +46,10 @@ func _process(delta):
 
 func _on_HitZone_body_entered(body):
 	if body.is_in_group("Player") and $HitTimer.is_stopped():
-		$HitTimer.start(2)
-		can_hit = true
+		$HitTimer.start(1)
 
 func _on_HitTimer_timeout():
-	if can_hit:
+	if $HitZone.overlaps_body(player):
 		hit_player()
-		$HitTimer.start(2)
+		$HitTimer.start(1)
 
-func _on_HitZone_body_exited(body):
-	if body.is_in_group("Player"):
-		can_hit = false

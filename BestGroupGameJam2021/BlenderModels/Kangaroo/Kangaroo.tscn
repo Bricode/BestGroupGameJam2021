@@ -1964,6 +1964,3 @@ anims/Cube002Action = SubResource( 57 )
 anims/Cube003Action = SubResource( 58 )
 anims/Cube005Action = SubResource( 59 )
 anims/Cube007Action = SubResource( 60 )
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.24185, 7.85489 )
