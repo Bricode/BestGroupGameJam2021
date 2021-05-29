@@ -35,6 +35,10 @@ config/icon="res://icon.png"
 PlayerInfo="*res://Ui/PlayerInfo.gd"
 KonamiCode="*res://konami_code.gd"
 
+[global]
+
+frame=false
+
 [input]
 
 move_forward={

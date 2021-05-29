@@ -41,6 +41,8 @@ func _process(delta):
 		airtime = 15
 	else:
 		airtime -= 50*delta
+		if airtime <= -10:
+			airtime = -10
 	direction.y = airtime*100
 	move_and_slide(direction * delta, Vector3.UP)
 

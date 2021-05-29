@@ -9,5 +9,5 @@ func _on_NewGame_pressed():
 	PlayerInfo.score = 0
 	PlayerInfo.health = 100
 	PlayerInfo.charge = 100
-	get_tree().change_scene("res://Levels/TestLevel.tscn")
+	get_tree().change_scene("res://Levels/City.tscn")
 
