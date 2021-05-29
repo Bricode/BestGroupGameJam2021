@@ -42,7 +42,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("sprint"):
 		acceleration = 100
 	elif Input.is_action_pressed("move_forward") and Input.is_action_pressed("move_left") or Input.is_action_pressed("move_forward") and Input.is_action_pressed("move_right"):
-		acceleration = 100
+		acceleration = 200
 	else:
 		acceleration = 50
 	
