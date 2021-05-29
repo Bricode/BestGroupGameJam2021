@@ -67,15 +67,16 @@ func _physics_process(delta):
 	if Input.is_action_pressed("primary_fire") and PlayerInfo.score >= 20100:
 		if PlayerInfo.charge >= 1:
 			PlayerInfo.change_charge(-1)
+			$LazerSound.play()
 			var lazer = load("res://Player/LaserMesh.tscn").instance()
 			lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
 			lazer.look_at(lazer.move,Vector3.UP)
 			lazer.translation = global_transform.origin + Vector3(0,0.5,0)
 			get_parent().get_node("Lazers").add_child(lazer)
-	elif Input.is_action_just_pressed("primary_fire"):
-		$LazerSound.play()
+	elif Input.is_action_just_pressed("primary_fire"):		
 		if PlayerInfo.charge >= 10:
 			PlayerInfo.change_charge(-10)
+			$LazerSound.play()
 			create_lazer(global_transform.origin + Vector3(0,0.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 			if PlayerInfo.score >= 1100:
 				create_lazer(global_transform.origin - Vector3(0,0.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
