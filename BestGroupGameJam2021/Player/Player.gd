@@ -81,6 +81,14 @@ func _physics_process(delta):
 						lazer.look_at(lazer.move,Vector3.UP)
 						lazer.translation = global_transform.origin- Vector3(0,1.5,0)
 						get_parent().get_node("Lazers").add_child(lazer)
+	elif Input.is_action_pressed("primary_fire") and PlayerInfo.score >= 20100:
+		if PlayerInfo.charge >= 1:
+			PlayerInfo.change_charge(-1)
+			var lazer = load("res://Player/LaserMesh.tscn").instance()
+			lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
+			lazer.look_at(lazer.move,Vector3.UP)
+			lazer.translation = global_transform.origin + Vector3(0,0.5,0)
+			get_parent().get_node("Lazers").add_child(lazer)
 	
 	if PlayerInfo.konami_code:
 		PlayerInfo.score += 10
