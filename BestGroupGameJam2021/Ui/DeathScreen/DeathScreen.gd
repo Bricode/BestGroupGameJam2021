@@ -9,12 +9,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().set_auto_accept_quit(false)
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	#new_hight_score(1,"kiwi2") 
 
 
 func _on_Exit_pressed():
@@ -36,3 +31,23 @@ func _on_NewGame_pressed():
 	get_tree().change_scene("res://Levels/Level1.tscn")
 #	print("yes")
 #	pass # Replace with function body.
+
+func new_hight_score(number,name):
+	var save = load("user://save.res")
+	if not save:
+		save = Resource.new()
+		save.set_script(load("res://Ui/HighscoreWindow/High_score_save.gd"))
+	var added = false
+	for p in range(len(save.places)):
+		if save.places[p].score <= number:
+			save.places.insert(p,{"name":name,"score":number})
+			added = true
+			break
+	if not added:
+		save.places.append({"name":name,"score":number})
+	print(ResourceSaver.save("user://save.res",save))
+	for p in save.places:
+		var lab = Label.new()
+		lab.text = p.name + ":" + str(p.score)
+		$HighScores/Box.add_child(lab)
+	#$HighScores/Currnet.text = "Current:" + str(number)
