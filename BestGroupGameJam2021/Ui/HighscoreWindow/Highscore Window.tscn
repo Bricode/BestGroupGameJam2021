@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Ui/ButtonTexture/Highscore.png" type="Texture" id=1]
+[ext_resource path="res://Ui/ButtonTexture/Highscore-Hover.png" type="Texture" id=2]
 
-[node name="Node2D" type="Control"]
+[node name="Highscores" type="Control"]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -21,6 +22,7 @@ margin_top = 1.18921
 margin_right = 206.595
 margin_bottom = 79.1892
 texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
 
 [node name="Highscore 1" type="Label" parent="ColorRect"]
 margin_left = 22.0
