@@ -13,14 +13,14 @@ export var ads_fov : float = 55
 #onready var charges_label = $"/root/World/UI/Label"
 export var raycast_path : NodePath
 export var camera_path : NodePath
-
+onready var lasermesh = preload("res://Player/LaserMesh.tscn")
 var raycast : RayCast
 var camera : Camera
-
 var current_charges = 0
 var can_fire = true
 var reloading = false
-
+var collider
+var laserReady = false
 func _ready():
 #	current_charges = clip_size
 	raycast = get_node(raycast_path)
@@ -48,11 +48,15 @@ func _process(delta):
 		visible = false
 
 func check_collision():
+	var space_state = get_world().direct_space_state
+	var result = space_state.intersect_ray(Vector3(0, 0,0), Vector3(50, 100,0))
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		if collider.is_in_group("Enemies"):
 			collider.hit_enemy()
 			print("Hit " + collider.name)
+		var laser = add_child(lasermesh.instance())
+
 
 func fire():
 	print("Fired weapon")
@@ -61,7 +65,6 @@ func fire():
 	$coonan357/AnimationPlayer.play("HandleAction")
 	check_collision()
 	yield(get_tree().create_timer(fire_rate), "timeout")
-	
 	can_fire = true
 
 func reload():

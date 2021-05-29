@@ -308,3 +308,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7, 0 )
 
 [node name="coonan" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.867936, 0.440076, 3.4284 )
+
+[node name="Lasers" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.259123, 1.90359, 1.31056 )
+
+[editable path="Player"]
