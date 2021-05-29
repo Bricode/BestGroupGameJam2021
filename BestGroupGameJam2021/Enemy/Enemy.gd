@@ -5,7 +5,7 @@ onready var player = get_parent().get_parent().get_node("Player")
 var health = 3
 var airtime = 2
 
-onready var blood = preload("res://ParticleEffects/Oil.tscn")
+onready var blood = preload("res://ParticleEffects/Spark.tscn")
 
 
 func hit_enemy():
