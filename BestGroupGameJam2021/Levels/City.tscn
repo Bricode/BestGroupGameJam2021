@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://LevelParts/Buildings/4.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://GameModels/LightPost.fbx" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://LevelParts/Buildings/7.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://Enemy/Enemy_spawns.gd" type="Script" id=6]
 [ext_resource path="res://LevelParts/Buildings/3.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://Levels/Enviroment.tscn" type="PackedScene" id=8]
 [ext_resource path="res://LevelParts/Buildings/11.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://LevelParts/Buildings/6.obj" type="ArrayMesh" id=10]
 [ext_resource path="res://LevelParts/Buildings/5.obj" type="ArrayMesh" id=11]
@@ -1003,7 +1004,8 @@ script = ExtResource( 3 )
 [node name="Enemys" type="Node" parent="."]
 
 [node name="Enemy_spawn_timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.5
+autostart = true
 
 [node name="Enemy_Spawns" type="Node" parent="."]
 script = ExtResource( 6 )
@@ -1048,3 +1050,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9881, 30.4835, -21.5855 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5875, 30.4835, -21.5855 )
 
 [node name="Lazers" type="Node" parent="."]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource( 8 )]
+
+[connection signal="timeout" from="Enemy_spawn_timer" to="Enemy_Spawns" method="_on_Enemy_spawn_timer_timeout"]
