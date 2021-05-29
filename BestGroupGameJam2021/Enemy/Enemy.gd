@@ -16,6 +16,7 @@ func hit_enemy():
 	get_parent().add_child(b)
 	b.set_emitting(true)
 	if health <= 0:
+		PlayerInfo.change_score(100)
 		queue_free()
 		print("Killed " + filename)
 

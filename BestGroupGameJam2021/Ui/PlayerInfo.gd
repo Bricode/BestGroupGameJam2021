@@ -106,3 +106,5 @@ func get_textevent():
 func change_score(amount):
 	score += amount
 
+func get_score():
+	return score
