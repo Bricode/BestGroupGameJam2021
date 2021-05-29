@@ -41,8 +41,6 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("sprint"):
 		acceleration = 100
-	elif Input.is_action_pressed("move_forward") and Input.is_action_pressed("move_left") or Input.is_action_pressed("move_forward") and Input.is_action_pressed("move_right"):
-		acceleration = 200
 	else:
 		acceleration = 50
 	
@@ -70,6 +68,7 @@ func _physics_process(delta):
 
 
 	if Input.is_action_pressed("primary_fire") and PlayerInfo.score >= 20100:
+		$LazerSound.play()
 		if PlayerInfo.charge >= 1:
 			PlayerInfo.change_charge(-1)
 			var lazer = load("res://Player/LaserMesh.tscn").instance()
