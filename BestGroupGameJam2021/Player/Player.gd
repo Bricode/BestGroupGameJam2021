@@ -108,6 +108,7 @@ func hit():
 	PlayerInfo.change_health(-10)
 	if PlayerInfo.health <= 0:
 		get_tree().change_scene("res://Ui/DeathScreen/DeathScreen.tscn")
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 
 func shake():
 	var amount = pow(trauma, trauma_power)
