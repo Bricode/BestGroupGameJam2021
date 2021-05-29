@@ -31,7 +31,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00736046, 1.43027, -0.69635
 shape = SubResource( 4 )
 
 [node name="HitTimer" type="Timer" parent="."]
-wait_time = 2.0
 one_shot = true
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
