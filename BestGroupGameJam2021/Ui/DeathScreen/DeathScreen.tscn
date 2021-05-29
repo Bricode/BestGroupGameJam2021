@@ -131,6 +131,10 @@ margin_top = 24.9113
 margin_right = 752.206
 margin_bottom = 24.9113
 
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
 [connection signal="pressed" from="YouDied/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="YouDied/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="button_down" from="YouDied/Add_score/Add_score_button" to="." method="_on_Add_score_button_down"]
