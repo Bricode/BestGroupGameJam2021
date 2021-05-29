@@ -5,7 +5,7 @@ extends KinematicBody
 # var a = 2
 # var b = "text"
 onready var player = get_parent().get_parent().get_node("Player")
-var speed = 200
+var speed = 250
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

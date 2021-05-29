@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Ui/StatsUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SoundEffects/lazer.wav" type="AudioStream" id=3]
+[ext_resource path="res://BlenderModels/Kiwi/Kiwi Beak.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SoundEffects/playerHitNoise.wav" type="AudioStream" id=5]
 [ext_resource path="res://Ui/Menu/Menu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Ui/crosshair/crosshair.tscn" type="PackedScene" id=7]
 
@@ -18,34 +21,33 @@ mid_height = 1.25
 ]]
 script = ExtResource( 1 )
 
+[node name="HitSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 5 )
+
 [node name="Head" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919402, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.382953, 0 )
 cull_mask = 1048573
-current = true
 
-[node name="RayCast" type="RayCast" parent="Head/Camera"]
-enabled = true
-cast_to = Vector3( 0, 0, -100 )
-collision_mask = 2
+[node name="Kiwi Beak2" parent="Head/Camera" instance=ExtResource( 4 )]
+transform = Transform( -6.55671e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.55671e-09, 0, -0.126, -0.497 )
 
 [node name="FlashLight" type="SpotLight" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6 )
-light_color = Color( 1, 0.996078, 0.682353, 1 )
+light_color = Color( 0.92549, 0.917647, 0.12549, 1 )
 light_energy = 0.5
 light_specular = 0.84
-spot_range = 67.3677
+spot_range = 25.23
 spot_attenuation = 5.0
-spot_angle = 80.7875
-
-[node name="Weapons" type="Spatial" parent="Head/Camera"]
+spot_angle = 46.4063
 
 [node name="Spatial" type="Spatial" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
@@ -68,6 +70,8 @@ handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.696122, 0 )
+visible = false
 cull_mask = 2
 current = true
 near = 0.01
@@ -77,3 +81,6 @@ near = 0.01
 [node name="Ui" parent="." instance=ExtResource( 2 )]
 
 [node name="Menu" parent="." instance=ExtResource( 6 )]
+
+[node name="LazerSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )

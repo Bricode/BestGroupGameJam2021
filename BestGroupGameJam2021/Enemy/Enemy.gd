@@ -5,7 +5,7 @@ onready var player = get_parent().get_parent().get_node("Player")
 var health = 3
 var airtime = 2
 
-onready var blood = preload("res://ParticleEffects/Oil.tscn")
+onready var blood = preload("res://ParticleEffects/Spark.tscn")
 
 
 func hit_enemy():
@@ -19,13 +19,6 @@ func hit_enemy():
 		PlayerInfo.change_score(100)
 		queue_free()
 
-func hit_player():
-	print("hit")
-	PlayerInfo.change_health(-10)
-	if PlayerInfo.health <= 0:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-		get_tree().change_scene("res://Ui/DeathScreen/DeathScreen.tscn")
-
 func _process(delta):
 	if not player:
 		return
@@ -35,7 +28,7 @@ func _process(delta):
 	var direction = -player.transform.origin.direction_to(transform.origin) *speed
 	var player_vec3 = player.transform.origin
 	var enemy_vec3 = transform.origin
-	if Vector2(player_vec3.x,player_vec3.z).distance_to(Vector2(enemy_vec3.x,enemy_vec3.z)) <= 3:
+	if Vector2(player_vec3.x,player_vec3.z).distance_to(Vector2(enemy_vec3.x,enemy_vec3.z)) <= 2:
 		direction = Vector3(0,0,0)
 	if is_on_floor():
 		airtime = 15
@@ -52,6 +45,6 @@ func _on_HitZone_body_entered(body):
 
 func _on_HitTimer_timeout():
 	if $HitZone.overlaps_body(player):
-		hit_player()
+		player.hit()
 		$HitTimer.start(1)
 
