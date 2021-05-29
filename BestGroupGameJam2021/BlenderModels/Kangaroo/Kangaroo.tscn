@@ -1906,6 +1906,7 @@ material/0 = null
 material/1 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
 anims/Armature001Action001 = SubResource( 11 )
 anims/Armature002Action002 = SubResource( 12 )
 anims/Armature003Action001 = SubResource( 13 )
@@ -1918,6 +1919,7 @@ anims/Cube005Action = SubResource( 19 )
 anims/Cube007Action = SubResource( 20 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
 anims/Armature001Action001 = SubResource( 21 )
 anims/Armature002Action002 = SubResource( 22 )
 anims/Armature003Action001 = SubResource( 23 )
@@ -1930,6 +1932,7 @@ anims/Cube005Action = SubResource( 29 )
 anims/Cube007Action = SubResource( 30 )
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
 anims/Armature001Action001 = SubResource( 31 )
 anims/Armature002Action002 = SubResource( 32 )
 anims/Armature003Action001 = SubResource( 33 )
@@ -1942,6 +1945,7 @@ anims/Cube005Action = SubResource( 39 )
 anims/Cube007Action = SubResource( 40 )
 
 [node name="AnimationPlayer4" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
 anims/Armature001Action001 = SubResource( 41 )
 anims/Armature002Action002 = SubResource( 42 )
 anims/Armature003Action001 = SubResource( 43 )
@@ -1954,6 +1958,7 @@ anims/Cube005Action = SubResource( 49 )
 anims/Cube007Action = SubResource( 50 )
 
 [node name="AnimationPlayer5" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
 anims/Armature001Action001 = SubResource( 51 )
 anims/Armature002Action002 = SubResource( 52 )
 anims/Armature003Action001 = SubResource( 53 )
