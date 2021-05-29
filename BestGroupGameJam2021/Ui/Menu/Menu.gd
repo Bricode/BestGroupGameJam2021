@@ -94,6 +94,3 @@ func _on_Exit_pressed():
 #
 #	pass # Replace with function body.
 
-
-func _on_Options_pressed():
-	pass # Replace with function body.

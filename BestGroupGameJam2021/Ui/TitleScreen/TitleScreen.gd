@@ -34,6 +34,6 @@ func _on_NewGame_pressed():
 	PlayerInfo.charges = 100
 	PlayerInfo.charges_clip = 100
 	PlayerInfo.power = 100
-	get_tree().change_scene("res://CutScenes/Intro.tscn")
+	get_tree().change_scene("res://Levels/TestLevel.tscn")
 #	print("yes")
 #	pass # Replace with function body.
