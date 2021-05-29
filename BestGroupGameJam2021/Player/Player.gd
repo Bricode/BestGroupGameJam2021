@@ -38,8 +38,6 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("sprint"):
 		acceleration = 100
-	elif Input.is_action_pressed("move_forward") and Input.is_action_pressed("move_left") or Input.is_action_pressed("move_forward") and Input.is_action_pressed("move_right"):
-		acceleration = 200
 	else:
 		acceleration = 50
 	
@@ -78,30 +76,13 @@ func _physics_process(delta):
 		$LazerSound.play()
 		if PlayerInfo.charge >= 10:
 			PlayerInfo.change_charge(-10)
-			var lazer = load("res://Player/LaserMesh.tscn").instance()
-			lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
-			lazer.look_at(lazer.move,Vector3.UP)
-			lazer.translation = global_transform.origin + Vector3(0,0.5,0)
-			get_parent().get_node("Lazers").add_child(lazer)
+			create_lazer(global_transform.origin + Vector3(0,0.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 			if PlayerInfo.score >= 1100:
-				print("work")
-				lazer = load("res://Player/LaserMesh.tscn").instance()
-				lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
-				lazer.look_at(lazer.move,Vector3.UP)
-				lazer.translation = global_transform.origin - Vector3(0,0.5,0)
-				get_parent().get_node("Lazers").add_child(lazer)
+				create_lazer(global_transform.origin - Vector3(0,0.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 				if PlayerInfo.score >= 5100:
-					lazer = load("res://Player/LaserMesh.tscn").instance()
-					lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
-					lazer.look_at(lazer.move,Vector3.UP)
-					lazer.translation = global_transform.origin + Vector3(0,1.5,0)
-					get_parent().get_node("Lazers").add_child(lazer)
+					create_lazer(global_transform.origin + Vector3(0,1.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 					if PlayerInfo.score >= 10100:
-						lazer = load("res://Player/LaserMesh.tscn").instance()
-						lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
-						lazer.look_at(lazer.move,Vector3.UP)
-						lazer.translation = global_transform.origin- Vector3(0,1.5,0)
-						get_parent().get_node("Lazers").add_child(lazer)
+						create_lazer(global_transform.origin - Vector3(0,1.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 	
 	if PlayerInfo.konami_code:
 		PlayerInfo.score += 10
@@ -121,3 +102,10 @@ func shake():
 	var amount = pow(trauma, trauma_power)
 	$Head/Camera.h_offset = max_offset.x * amount * rand_range(-1, 1)
 	$Head/Camera.v_offset = max_offset.y * amount * rand_range(-1, 1)
+
+func create_lazer(pos,dir):
+	var lazer = load("res://Player/LaserMesh.tscn").instance()
+	lazer.move = dir
+	lazer.look_at(dir,Vector3.UP)
+	lazer.translation = pos
+	get_parent().get_node("Lazers").add_child(lazer)

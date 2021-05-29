@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://LevelParts/Buildings/4.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://GameModels/LightPost.fbx" type="PackedScene" id=2]
@@ -53,14 +53,6 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SpatialMaterial" id=13]
-albedo_color = Color( 0.0980392, 0.27451, 0.972549, 1 )
-
-[sub_resource type="CubeMesh" id=14]
-material = SubResource( 13 )
-
-[sub_resource type="Skin" id=15]
-
 [node name="Spatial2" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 14 )]
@@ -68,8 +60,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.931114, 3.543, -5.71978 )
 
 [node name="Floor" type="StaticBody" parent="."]
 transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.955627, 0 )
-collision_layer = 7
-collision_mask = 7
+collision_layer = 5
+collision_mask = 5
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16649, 0 )
@@ -81,6 +73,9 @@ transform = Transform( 5, 0, 0, 0, 3, 0, 0, 0, 5, 0, 0, 0.00329485 )
 shape = SubResource( 3 )
 
 [node name="Area" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0133448, 0.234619, -0.167175 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2" type="CollisionShape" parent="Area"]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 100, -46.7933, 3.449, 0 )
