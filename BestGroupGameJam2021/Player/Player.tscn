@@ -25,7 +25,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919402, 0 )
 [node name="Camera" type="Camera" parent="Head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.382953, 0 )
 cull_mask = 1048573
-current = true
 
 [node name="Kiwi Beak2" parent="Head/Camera" instance=ExtResource( 4 )]
 transform = Transform( -6.55671e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.55671e-09, 0, -0.126, -0.497 )

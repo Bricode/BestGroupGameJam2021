@@ -46,8 +46,8 @@ scale = Vector2( 0.652682, 0.571813 )
 texture = ExtResource( 7 )
 
 [node name="laserkiwi" type="Sprite" parent="."]
-position = Vector2( 511.29, 277.912 )
-scale = Vector2( 0.854305, 0.835106 )
+position = Vector2( 511.884, 277.912 )
+scale = Vector2( 0.855296, 0.835106 )
 texture = ExtResource( 2 )
 
 [node name="Logo" type="TextureButton" parent="."]
@@ -88,6 +88,13 @@ texture_hover = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 1.0
+margin_top = 636.0
+margin_right = 1025.0
+margin_bottom = 676.0
+color = Color( 0, 0, 0, 1 )
 
 [connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
