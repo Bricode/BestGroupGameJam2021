@@ -2,7 +2,7 @@ extends KinematicBody
 
 var speed = 200
 onready var player = get_parent().get_parent().get_node("Player")
-var health = 3
+var health = 2
 var airtime = 2
 
 onready var blood = preload("res://ParticleEffects/Spark.tscn")
