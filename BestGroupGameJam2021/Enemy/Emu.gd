@@ -9,6 +9,8 @@ func _ready():
 	$EMU/AnimationPlayer.play("Running Attack")
 	
 func _process(delta):
+	if(rand_range(0,100) > 99):
+		$screech.play()
 	var move = Vector3(0,0,0)
 	look_at(player.global_transform.origin, Vector3.UP)
 	rotation_degrees.x = 0

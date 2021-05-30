@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://LevelParts/Buildings/4.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://GameModels/LightPost.fbx" type="PackedScene" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://BlenderModels/Sky Tower/Sky tower.glb" type="PackedScene" id=13]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=14]
 [ext_resource path="res://LevelParts/Materials/TexturesCom_Asphalt_BrokenRoad_2x2_1K_albedo.png" type="Texture" id=15]
+[ext_resource path="res://BlenderModels/Cars/SUV/Suv Knonced over.glb" type="PackedScene" id=16]
+[ext_resource path="res://BlenderModels/Cars/BMW/BMW Knocked over.glb" type="PackedScene" id=17]
+[ext_resource path="res://BlenderModels/Cars/Coffin cart/Coffin Cart knocked over.glb" type="PackedScene" id=18]
+[ext_resource path="res://BlenderModels/Cars/ICE Cream/ICE-CREAM TRUCK Knocked over.glb" type="PackedScene" id=19]
 [ext_resource path="res://Levels/Enviroment.tscn" type="PackedScene" id=20]
 [ext_resource path="res://BlenderModels/Sky Tower/Sky tower.gd" type="Script" id=21]
 
@@ -54,6 +58,37 @@ emission = Color( 1, 1, 1, 1 )
 emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=13]
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=14]
+offsets = PoolRealArray( 0, 0.550388, 0.937984 )
+colors = PoolColorArray( 0.992157, 0.462745, 0.0352941, 1, 0.984314, 0.360784, 0.360784, 1, 0.901961, 0.694118, 0.34902, 1 )
+
+[sub_resource type="GradientTexture" id=15]
+gradient = SubResource( 14 )
+
+[sub_resource type="ParticlesMaterial" id=16]
+emission_shape = 1
+emission_sphere_radius = 0.2
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+angular_velocity = 30.0
+angular_velocity_random = 1.0
+linear_accel = 4.0
+angle = 360.0
+angle_random = 1.0
+scale = 20.0
+color_ramp = SubResource( 15 )
+
+[sub_resource type="QuadMesh" id=17]
 
 [node name="Spatial2" type="Spatial"]
 
@@ -1068,19 +1103,6 @@ material/0 = SubResource( 12 )
 [node name="LightPost15" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75917, 0.297263, 40.9756 )
 
-[node name="SpotLight" type="SpotLight" parent="Spatial2/LightPost15"]
-transform = Transform( 1, 0, 0, 0, 0.0526323, 0.998614, 0, -0.998614, 0.0526323, 0, 7.07609, -1.29856 )
-light_energy = 16.0
-light_specular = 0.0
-spot_range = 8.24863
-spot_angle = 25.2262
-script = ExtResource( 3 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost15/SpotLight"]
-transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 11 )
-material/0 = SubResource( 12 )
-
 [node name="LightPost16" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1551, 0.297263, 40.9756 )
 
@@ -1180,34 +1202,8 @@ material/0 = SubResource( 12 )
 [node name="LightPost13" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40.568, 0.297263, 8.62035 )
 
-[node name="SpotLight" type="SpotLight" parent="Spatial2/LightPost13"]
-transform = Transform( 1, 0, 0, 0, 0.0526323, 0.998614, 0, -0.998614, 0.0526323, 0, 7.07609, -1.29856 )
-light_energy = 16.0
-light_specular = 0.0
-spot_range = 8.24863
-spot_angle = 25.2262
-script = ExtResource( 3 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost13/SpotLight"]
-transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 11 )
-material/0 = SubResource( 12 )
-
 [node name="LightPost14" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40.568, 0.297263, 36.8663 )
-
-[node name="SpotLight" type="SpotLight" parent="Spatial2/LightPost14"]
-transform = Transform( 1, 0, 0, 0, 0.0526323, 0.998614, 0, -0.998614, 0.0526323, 0, 7.07609, -1.29856 )
-light_energy = 16.0
-light_specular = 0.0
-spot_range = 8.24863
-spot_angle = 25.2262
-script = ExtResource( 3 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost14/SpotLight"]
-transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
-mesh = SubResource( 11 )
-material/0 = SubResource( 12 )
 
 [node name="Enemys" type="Node" parent="."]
 
@@ -1308,6 +1304,117 @@ transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 38.8188, 0.417866, 5.
 
 [node name="HuhuGrub16" parent="huhuGrubs" instance=ExtResource( 8 )]
 transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 34.6478, 0.417866, 5.9434 )
+
+[node name="Suv Knonced over" parent="." instance=ExtResource( 16 )]
+transform = Transform( 0.0107864, 0, -0.999942, 0, 1, 0, 0.999942, 0, 0.0107864, -26.1917, 2.21424, -23.9345 )
+
+[node name="6x6 knocked over" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.49984, 0, 0.0126525, 0, 0.5, 0, -0.0126525, 0, 0.49984, -41.4691, 1.63696, -28.0616 )
+
+[node name="BMW Knocked over" parent="." instance=ExtResource( 17 )]
+transform = Transform( 0.000157074, 0, -1, 0, 1, 0, 1, 0, 0.000157074, 5.058, 1.03391, -45.3578 )
+
+[node name="ICE-CREAM TRUCK Knocked over" parent="." instance=ExtResource( 19 )]
+transform = Transform( -0.298889, 0, 0.40083, 0, 0.5, 0, -0.40083, 0, -0.298889, 27.3875, 1.60147, 13.0533 )
+
+[node name="ICE-CREAM TRUCK Knocked over2" parent="." instance=ExtResource( 19 )]
+transform = Transform( -0.181967, 0, 0.465713, 0, 0.5, 0, -0.465713, 0, -0.181967, -23.4954, 1.42877, 41.0698 )
+
+[node name="Suv Knonced over2" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3672, 2.00783, -3.35747 )
+
+[node name="Coffin Cart knocked over3" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 39.8822, 2.03371, -6.09203 )
+
+[node name="BMW Knocked over3" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.54169, 1.08308, 42.0081 )
+
+[node name="BMW Knocked over4" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.4776, 1.26747, 18.0705 )
+
+[node name="6x6 knocked over2" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -31.6369, 1.63572, 6.52289 )
+
+[node name="Volcano" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 21.3277, -2.43208, -44.3002 )
+
+[node name="Particles" type="Particles" parent="Volcano"]
+transform = Transform( 1, 0, 0, 0, -0.999994, -0.00324621, 0, 0.00324621, -0.999994, 0, 15.6618, 0 )
+material_override = SubResource( 13 )
+process_material = SubResource( 16 )
+draw_pass_1 = SubResource( 17 )
+
+[node name="OmniLight" type="OmniLight" parent="Volcano"]
+transform = Transform( 3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0, 13.0557, 0 )
+light_color = Color( 0.945098, 0.721569, 0.407843, 1 )
+light_energy = 5.47
+omni_range = 10.0
+
+[node name="Sky tower" parent="." instance=ExtResource( 13 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -0.287277, 4.75148, -77.9009 )
+script = ExtResource( 16 )
+
+[node name="Volcano2" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -25.9717, -2.43208, -44.3002 )
+
+[node name="Particles" type="Particles" parent="Volcano2"]
+transform = Transform( 1, 0, 0, 0, -0.999994, -0.00324621, 0, 0.00324621, -0.999994, 0, 15.6618, 0 )
+material_override = SubResource( 13 )
+process_material = SubResource( 16 )
+draw_pass_1 = SubResource( 17 )
+
+[node name="OmniLight" type="OmniLight" parent="Volcano2"]
+transform = Transform( 3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0, 13.0557, 0 )
+light_color = Color( 0.945098, 0.721569, 0.407843, 1 )
+light_energy = 5.47
+omni_range = 10.0
+
+[node name="Volcano3" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -16.7425, -2.43208, -13.7756 )
+
+[node name="Particles" type="Particles" parent="Volcano3"]
+transform = Transform( 1, 0, 0, 0, -0.999994, -0.00324621, 0, 0.00324621, -0.999994, 0, 15.6618, 0 )
+material_override = SubResource( 13 )
+process_material = SubResource( 16 )
+draw_pass_1 = SubResource( 17 )
+
+[node name="OmniLight" type="OmniLight" parent="Volcano3"]
+transform = Transform( 3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0, 13.0557, 0 )
+light_color = Color( 0.945098, 0.721569, 0.407843, 1 )
+light_energy = 5.47
+omni_range = 10.0
+
+[node name="Volcano4" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -10.2434, -2.43208, 11.3453 )
+
+[node name="Particles" type="Particles" parent="Volcano4"]
+transform = Transform( 1, 0, 0, 0, -0.999994, -0.00324621, 0, 0.00324621, -0.999994, 0, 15.6618, 0 )
+material_override = SubResource( 13 )
+process_material = SubResource( 16 )
+draw_pass_1 = SubResource( 17 )
+
+[node name="OmniLight" type="OmniLight" parent="Volcano4"]
+transform = Transform( 3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0, 13.0557, 0 )
+light_color = Color( 0.945098, 0.721569, 0.407843, 1 )
+light_energy = 5.47
+omni_range = 10.0
+
+[node name="Volcano5" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.23891, -2.43208, 38.335 )
+
+[node name="Particles" type="Particles" parent="Volcano5"]
+transform = Transform( 1, 0, 0, 0, -0.999994, -0.00324621, 0, 0.00324621, -0.999994, 0, 15.6618, 0 )
+material_override = SubResource( 13 )
+process_material = SubResource( 16 )
+draw_pass_1 = SubResource( 17 )
+
+[node name="WorldEnvironment" parent="Volcano5" instance=ExtResource( 17 )]
+
+[node name="OmniLight" type="OmniLight" parent="Volcano5"]
+transform = Transform( 3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0, 13.0557, 0 )
+light_color = Color( 0.945098, 0.721569, 0.407843, 1 )
+light_energy = 5.47
+omni_range = 10.0
 
 [node name="Sky tower2" parent="." instance=ExtResource( 13 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -0.287, 4.751, -77.901 )

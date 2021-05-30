@@ -31,6 +31,7 @@ func _process(delta):
 	if Vector2(player_vec3.x,player_vec3.z).distance_to(Vector2(enemy_vec3.x,enemy_vec3.z)) <= 2:
 		direction = Vector3(0,0,0)
 	if is_on_floor():
+		$bounce.play()
 		airtime = 15
 	else:
 		airtime -= 50*delta
