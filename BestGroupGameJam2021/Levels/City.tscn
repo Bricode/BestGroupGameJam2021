@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://LevelParts/Buildings/4.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://GameModels/LightPost.fbx" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://BlenderModels/Sky Tower/Sky tower.glb" type="PackedScene" id=13]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=14]
 [ext_resource path="res://LevelParts/Materials/TexturesCom_Asphalt_BrokenRoad_2x2_1K_albedo.png" type="Texture" id=15]
+[ext_resource path="res://Levels/Enviroment.tscn" type="PackedScene" id=20]
 [ext_resource path="res://BlenderModels/Sky Tower/Sky tower.gd" type="Script" id=21]
 
 [sub_resource type="CubeMesh" id=1]
@@ -58,6 +59,8 @@ emission_on_uv2 = false
 
 [node name="Player" parent="." instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.931114, 3.543, -5.71978 )
+
+[node name="WorldEnvironment" parent="." instance=ExtResource( 20 )]
 
 [node name="Floor" type="StaticBody" parent="."]
 transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.955627, 0 )
@@ -1259,7 +1262,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5875, 30.4835, -21.5855 )
 [node name="huhuGrubs" type="Node" parent="."]
 
 [node name="HuhuGrub" parent="huhuGrubs" instance=ExtResource( 8 )]
-transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 15.147, 0.417866, -6.0251 )
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 15.147, 4.24953, -6.0251 )
 
 [node name="HuhuGrub2" parent="huhuGrubs" instance=ExtResource( 8 )]
 transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 39.2126, 0.417866, -6.0251 )
