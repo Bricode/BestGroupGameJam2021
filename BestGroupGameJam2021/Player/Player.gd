@@ -77,33 +77,16 @@ func _physics_process(delta):
 		if PlayerInfo.charge >= 10:
 			PlayerInfo.change_charge(-10)
 			$LazerSound.play()
-			var lazer = load("res://Player/LaserMesh.tscn").instance()
-			lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
-			lazer.look_at(lazer.move,Vector3.UP)
-			lazer.translation = global_transform.origin + Vector3(0,0.5,0)
-			get_parent().get_node("Lazers").add_child(lazer)
+			create_lazer(global_transform.origin + Vector3(0,0.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 			if PlayerInfo.score >= 1100:
-				print("work")
-				lazer = load("res://Player/LaserMesh.tscn").instance()
-				lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
-				lazer.look_at(lazer.move,Vector3.UP)
-				lazer.translation = global_transform.origin - Vector3(0,0.5,0)
-				get_parent().get_node("Lazers").add_child(lazer)
+				create_lazer(global_transform.origin - Vector3(0,0.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 				if PlayerInfo.score >= 5100:
-					lazer = load("res://Player/LaserMesh.tscn").instance()
-					lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
-					lazer.look_at(lazer.move,Vector3.UP)
-					lazer.translation = global_transform.origin + Vector3(0,1.5,0)
-					get_parent().get_node("Lazers").add_child(lazer)
+					create_lazer(global_transform.origin + Vector3(0,1.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 					if PlayerInfo.score >= 10100:
-						lazer = load("res://Player/LaserMesh.tscn").instance()
-						lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
-						lazer.look_at(lazer.move,Vector3.UP)
-						lazer.translation = global_transform.origin- Vector3(0,1.5,0)
-						get_parent().get_node("Lazers").add_child(lazer)
+						create_lazer(global_transform.origin - Vector3(0,1.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 	
 	if PlayerInfo.konami_code:
-		PlayerInfo.score += 10
+		PlayerInfo.score += 100
 		PlayerInfo.charge = 100
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
@@ -120,3 +103,10 @@ func shake():
 	var amount = pow(trauma, trauma_power)
 	$Head/Camera.h_offset = max_offset.x * amount * rand_range(-1, 1)
 	$Head/Camera.v_offset = max_offset.y * amount * rand_range(-1, 1)
+
+func create_lazer(pos,dir):
+	var lazer = load("res://Player/LaserMesh.tscn").instance()
+	lazer.move = dir
+	lazer.look_at(dir,Vector3.UP)
+	lazer.translation = pos
+	get_parent().get_node("Lazers").add_child(lazer)
