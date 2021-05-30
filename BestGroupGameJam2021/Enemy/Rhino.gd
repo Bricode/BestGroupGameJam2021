@@ -8,6 +8,7 @@ var health = 3
 
 func _ready():
 	$Rhino/AnimationPlayer.play("ArmatureAction")
+	
 
 func _process(delta):
 	var move = Vector3(0,0,0)
@@ -38,6 +39,7 @@ func _on_Hit_zone_body_entered(body):
 		
 func _on_Hit_timer_timeout():
 	if $Hit_zone.overlaps_body(player):
+		$HitNoise.play()
 		player.hit(-8)
 		$Hit_timer.start(1)
 		

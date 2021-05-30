@@ -68,7 +68,7 @@ func _process(delta):
 	if Input.is_action_pressed("primary_fire") and PlayerInfo.score >= 20100:
 		if PlayerInfo.charge >= 1:
 			$LazerSound.play()
-			PlayerInfo.change_charge(-1)
+			PlayerInfo.change_charge(-10)
 			$LazerSound.play()
 			var lazer = load("res://Player/LaserMesh.tscn").instance()
 			lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
