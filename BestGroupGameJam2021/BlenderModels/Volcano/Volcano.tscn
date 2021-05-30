@@ -2840,6 +2840,3 @@ anims/Sphere004Action009 = SubResource( 218 )
 anims/Sphere004Action010 = SubResource( 219 )
 anims/Sphere004Action011 = SubResource( 220 )
 anims/SphereAction = SubResource( 221 )
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.900729, 0.434382, 0, -0.434382, 0.900729, 0, 16.1888, 33.0231 )

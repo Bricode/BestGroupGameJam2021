@@ -86,7 +86,7 @@ func _physics_process(delta):
 						create_lazer(global_transform.origin - Vector3(0,1.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 	
 	if PlayerInfo.konami_code:
-		PlayerInfo.score += 10
+		PlayerInfo.score += 100
 		PlayerInfo.charge = 100
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
