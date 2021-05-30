@@ -30,7 +30,7 @@ func _on_Exit_pressed():
 
 func _on_NewGame_pressed():
 	PlayerInfo.health = 100
-	PlayerInfo.charge = 100
+	PlayerInfo.charge = 500
 	get_tree().change_scene("res://Levels/City.tscn")
 
 func add_hight_score(number,name):
