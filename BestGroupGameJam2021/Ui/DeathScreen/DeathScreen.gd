@@ -1,13 +1,23 @@
 extends Control
 
 var current = 0
+#var counter = 0
 
 func _ready():
+	$GameOverSound.play()
 	current = PlayerInfo.get_score()
 	$YouDied/Add_score/Currnet.text = "Current:" + str(current)
 	show_high_score() 
 
 func _process(delta):
+	#if counter == 0:
+	#	$GameOverSound.play()
+	#	counter += 1
+	#	print($GameOverSound.Get_Length())
+	#	print("TRUMBONE")
+	#else:
+	#	$GameOverSound.stop()
+	#	print("NOT TRUMP")
 	if PlayerInfo.konami_code == true:
 		$YouDied2.visible = false
 		$YouDed.visible = true
