@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://LevelParts/Buildings/4.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://GameModels/LightPost.fbx" type="PackedScene" id=2]
@@ -12,10 +12,15 @@
 [ext_resource path="res://LevelParts/Buildings/6.obj" type="ArrayMesh" id=10]
 [ext_resource path="res://LevelParts/Buildings/5.obj" type="ArrayMesh" id=11]
 [ext_resource path="res://LevelParts/Buildings/2.obj" type="ArrayMesh" id=12]
-[ext_resource path="res://BlenderModels/Sky Tower/Sky tower.glb" type="PackedScene" id=13]
+[ext_resource path="res://BlenderModels/Cars/6x6/6x6 knocked over.glb" type="PackedScene" id=13]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=14]
 [ext_resource path="res://LevelParts/Materials/TexturesCom_Asphalt_BrokenRoad_2x2_1K_albedo.png" type="Texture" id=15]
-[ext_resource path="res://BlenderModels/Sky Tower/Sky tower.gd" type="Script" id=16]
+[ext_resource path="res://BlenderModels/Sky Tower/Sky tower.gd" type="Script" id=21]
+[ext_resource path="res://BlenderModels/Cars/SUV/Suv Knonced over.glb" type="PackedScene" id=16]
+[ext_resource path="res://BlenderModels/Cars/BMW/BMW Knocked over.glb" type="PackedScene" id=17]
+[ext_resource path="res://BlenderModels/Cars/Coffin cart/Coffin Cart knocked over.glb" type="PackedScene" id=18]
+[ext_resource path="res://BlenderModels/Cars/ICE Cream/ICE-CREAM TRUCK Knocked over.glb" type="PackedScene" id=19]
+[ext_resource path="res://Levels/Enviroment.tscn" type="PackedScene" id=20]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -1148,7 +1153,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.984782, 0 )
 
 [node name="Sky tower" parent="." instance=ExtResource( 13 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -0.287277, 4.75148, -77.9009 )
-script = ExtResource( 16 )
+script = ExtResource( 21 )
 
 [node name="OmniLight" type="OmniLight" parent="Sky tower"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 19.69, 4.57544 )
