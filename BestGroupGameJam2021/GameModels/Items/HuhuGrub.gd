@@ -2,10 +2,10 @@ extends KinematicBody
 
 func _on_Area_body_shape_entered(body_id, body, body_shape, area_shape):
 	if body.is_in_group("Player"):
-		if PlayerInfo.charge <= 499:
+		if PlayerInfo.charge < 500:
 			PlayerInfo.change_charge(250)
 			PlayerInfo.change_score(10)
-		newlocation()
+			newlocation()
 			
 func newlocation():
 	hide()
