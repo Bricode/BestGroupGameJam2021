@@ -87,14 +87,14 @@ func _physics_process(delta):
 	
 	if PlayerInfo.konami_code:
 		PlayerInfo.score += 100
-		PlayerInfo.charge = 100
+		PlayerInfo.charge = 500
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
 		shake()
 
-func hit():
+func hit(number):
 	trauma = 1
-	PlayerInfo.change_health(-10)
+	PlayerInfo.change_health(number)
 	if PlayerInfo.health <= 0:
 		get_tree().change_scene("res://Ui/DeathScreen/DeathScreen.tscn")
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

@@ -15,8 +15,8 @@ var mouse_sensitivity
 func _ready():
 	health = 100
 	max_health = 100
-	charge = 100
-	max_charge = 100
+	charge = 500
+	max_charge = 500
 	score = 0
 	mouse_sensitivity = 0.003
 	konami_code = false
