@@ -444,7 +444,7 @@ tracks/21/keys = {
 
 [sub_resource type="SpatialMaterial" id=6]
 emission_enabled = true
-emission = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+emission = Color( 0.984314, 0.0235294, 0.0235294, 1 )
 emission_energy = 0.5
 emission_operator = 0
 emission_on_uv2 = false
@@ -584,13 +584,13 @@ material/0 = SubResource( 6 )
 
 [node name="OmniLight" type="SpotLight" parent="Spatial/MeshInstance3"]
 transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0, 0, 0 )
-light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+light_color = Color( 0.984314, 0.0235294, 0.0235294, 1 )
 spot_range = 13.7723
 spot_angle = 34.7403
 
 [node name="OmniLight2" type="OmniLight" parent="Spatial/MeshInstance3"]
 transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0.438588, 0.298971, -1.57953 )
-light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+light_color = Color( 0.984314, 0.0235294, 0.0235294, 1 )
 omni_range = 0.615437
 
 [node name="MeshInstance4" type="MeshInstance" parent="Spatial"]
@@ -600,11 +600,11 @@ material/0 = SubResource( 6 )
 
 [node name="OmniLight3" type="SpotLight" parent="Spatial/MeshInstance4"]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 2.33195, -0.186504, -0.296997 )
-light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+light_color = Color( 0.984314, 0.0235294, 0.0235294, 1 )
 spot_range = 13.7723
 spot_angle = 34.7403
 
 [node name="OmniLight2" type="OmniLight" parent="Spatial/MeshInstance4"]
 transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0.438588, 0.298971, -1.57953 )
-light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+light_color = Color( 0.984314, 0.0235294, 0.0235294, 1 )
 omni_range = 0.615437
