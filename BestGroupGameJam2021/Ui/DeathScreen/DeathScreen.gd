@@ -29,6 +29,8 @@ func _on_Exit_pressed():
 	get_tree().change_scene("res://Ui/TitleScreen/Title.tscn")
 
 func _on_NewGame_pressed():
+	PlayerInfo.konami_code = false
+	PlayerInfo.score = 0
 	PlayerInfo.health = 100
 	PlayerInfo.charge = 500
 	get_tree().change_scene("res://Levels/City.tscn")

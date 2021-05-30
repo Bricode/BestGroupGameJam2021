@@ -1335,9 +1335,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.54169, 1.08308, 42.0081 )
 [node name="BMW Knocked over4" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.4776, 1.26747, 18.0705 )
 
-[node name="6x6 knocked over2" parent="." instance=ExtResource( 13 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -31.6369, 1.63572, 6.52289 )
-
 [node name="Spatial3" type="Spatial" parent="."]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 21.3277, -2.43208, -44.3002 )
 
