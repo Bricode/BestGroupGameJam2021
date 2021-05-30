@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://BlenderModels/EMU/Brown.material" type="Material" id=1]
 [ext_resource path="res://BlenderModels/EMU/Material.material" type="Material" id=2]
@@ -263,6 +263,18 @@ tracks/20/loop_wrap = true
 tracks/20/imported = true
 tracks/20/enabled = true
 tracks/20/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0.0666667, 1, 0, -0.000367165, 0.00308394, 0, 0, 0, 1, 1, 1, 1, 0.133333, 1, 0, -0.00121307, 0.0101902, 7.45058e-09, 0, 0, 1, 1, 1, 1, 0.333333, 1, 0, -0.00446939, 0.0375435, 0, 0, 0, 1, 1, 1, 1, 0.4, 1, 0, -0.00493193, 0.0414321, 0, 0, 0, 1, 1, 1, 1, 0.466667, 1, 0, -0.00477266, 0.0400913, 0, 0, 0, 1, 1, 1, 1, 0.533333, 1, 0, -0.00402212, 0.0337893, 0, 0, 0, 1, 1, 1, 1, 0.733333, 1, 0, -0.000742197, 0.00623488, 0, 0, 0, 1, 1, 1, 1, 0.8, 1, 0, -0.00011158, 0.000938654, 0, 0, 0, 1, 1, 1, 1, 0.833333, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
+tracks/21/type = "value"
+tracks/21/path = NodePath("Spatial:translation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -0.0904074, 0 ), Vector3( 0, -0.919403, 0.736825 ), Vector3( 0, -2.02178, 1.15494 ), Vector3( 0, -2.47319, 1.32605 ), Vector3( 0, -2.18731, 1.02004 ), Vector3( 0, -1.1992, 0.714025 ), Vector3( 0, -0.404273, 0.408014 ), Vector3( 0, 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "Running Attack"
@@ -415,6 +427,27 @@ tracks/20/loop_wrap = true
 tracks/20/imported = true
 tracks/20/enabled = true
 tracks/20/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0.833333, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
+tracks/21/type = "value"
+tracks/21/path = NodePath("Spatial:translation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -0.09, 0 ), Vector3( 0, -0.630282, 0.849632 ), Vector3( 0, -0.936205, 0.819401 ), Vector3( 0, -1.50286, 1.09754 ), Vector3( 0, -1.5599, 1.0818 ), Vector3( 0, -1.8189, 1.22698 ), Vector3( 0, -0.826228, 0.701129 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="SphereMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=6]
+emission_enabled = true
+emission = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+emission_energy = 0.5
+emission_operator = 0
+emission_on_uv2 = false
 
 [node name="EMU" type="Spatial"]
 script = ExtResource( 5 )
@@ -540,3 +573,38 @@ playback_speed = 2.0
 "anims/EMUEMU attack " = SubResource( 3 )
 "anims/EMURunning " = ExtResource( 6 )
 "anims/Running Attack" = SubResource( 4 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.65845, 1.13704 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Spatial"]
+transform = Transform( -0.0977294, 0, 0.0211888, 0, 0.1, 0, -0.0211888, 0, -0.0977294, -0.925074, 5.47419, 7.29442 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="OmniLight" type="SpotLight" parent="Spatial/MeshInstance3"]
+transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0, 0, 0 )
+light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+spot_range = 13.7723
+spot_angle = 34.7403
+
+[node name="OmniLight2" type="OmniLight" parent="Spatial/MeshInstance3"]
+transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0.438588, 0.298971, -1.57953 )
+light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+omni_range = 0.615437
+
+[node name="MeshInstance4" type="MeshInstance" parent="Spatial"]
+transform = Transform( -0.0977294, 0, 0.0211888, 0, 0.1, 0, -0.0211888, 0, -0.0977294, -0.690881, 5.49284, 7.31481 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="OmniLight3" type="SpotLight" parent="Spatial/MeshInstance4"]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 2.33195, -0.186504, -0.296997 )
+light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+spot_range = 13.7723
+spot_angle = 34.7403
+
+[node name="OmniLight2" type="OmniLight" parent="Spatial/MeshInstance4"]
+transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0.438588, 0.298971, -1.57953 )
+light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+omni_range = 0.615437

@@ -30,4 +30,7 @@ shape = SubResource( 3 )
 light_color = Color( 1, 0.913725, 0, 1 )
 omni_range = 6.70916
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

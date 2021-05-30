@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://BlenderModels/Rhino/dark grey.material" type="Material" id=1]
 [ext_resource path="res://BlenderModels/Rhino/BLUE WHITE.material" type="Material" id=2]
@@ -338,6 +338,18 @@ tracks/28/loop_wrap = true
 tracks/28/imported = true
 tracks/28/enabled = true
 tracks/28/keys = PoolRealArray( 0, 1, 6.10137, 0, 0, 0, 0, -0.705063, 0.709145, 1, 1, 1, 1.20833, 1, 6.10137, 0, 0, 0, 0, -0.705063, 0.709145, 1, 1, 1 )
+tracks/29/type = "value"
+tracks/29/path = NodePath("Spatial:translation")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 3.04223, -0.405496, -1.58222 ), Vector3( 3.04223, -0.767388, -1.58222 ), Vector3( 2.71511, -1.30294, -1.58222 ), Vector3( 2.77611, -0.856639, -1.58222 ), Vector3( 3.06019, -0.0674049, -1.58222 ), Vector3( 3.05797, 0.00217482, -1.58222 ), Vector3( 3.05575, -0.659017, -1.58222 ), Vector3( 2.66858, -1.24646, -1.58222 ), Vector3( 2.8054, -0.910187, -1.58222 ), Vector3( 3.18613, -0.0212718, -1.58222 ), Vector3( 3.13946, 0.172573, -1.58222 ), Vector3( 3.09279, -0.145109, -1.58222 ), Vector3( 3.11675, -0.405895, -1.58222 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "CubeAction"
@@ -350,11 +362,20 @@ tracks/0/imported = true
 tracks/0/enabled = true
 tracks/0/keys = PoolRealArray( 0, 1, -0.0352261, -6.10127, 0, 0, 0, 0.705063, 0.709145, 1, 1, 1 )
 
+[sub_resource type="SphereMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=6]
+emission_enabled = true
+emission = Color( 0.823529, 0.894118, 0.00784314, 1 )
+emission_energy = 0.5
+emission_operator = 0
+emission_on_uv2 = false
+
 [node name="Rhino" type="Spatial"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
 [node name="Armature" type="Spatial" parent="."]
-transform = Transform( 0.00577337, 0.999983, 0, -0.999983, 0.00577337, 0, 0, 0, 1, 6.10137, 0, 0 )
+transform = Transform( 0.00577289, 0.999983, 0, -0.999983, 0.00577289, 0, 0, 0, 1, 6.10137, 0, 0 )
 
 [node name="Skeleton" type="Skeleton" parent="Armature"]
 bones/0/name = "Bone"
@@ -509,3 +530,38 @@ material/2 = null
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ArmatureAction = SubResource( 3 )
 anims/CubeAction = SubResource( 4 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.11675, -0.405895, -1.58222 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Spatial"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.27278, -0.157258, 0.942731 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="OmniLight" type="SpotLight" parent="Spatial/MeshInstance2"]
+transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0, 0, 0 )
+light_color = Color( 0.843137, 0.929412, 0.0627451, 1 )
+spot_range = 7.25305
+spot_angle = 31.8156
+
+[node name="OmniLight2" type="OmniLight" parent="Spatial/MeshInstance2"]
+transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0.438588, 0.298971, -1.57953 )
+light_color = Color( 0.843137, 0.929412, 0.0627451, 1 )
+omni_range = 0.615437
+
+[node name="MeshInstance3" type="MeshInstance" parent="Spatial"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.75992, -0.148707, 0.975471 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="OmniLight3" type="SpotLight" parent="Spatial/MeshInstance3"]
+transform = Transform( 10, 0, -5.68434e-14, 0, 10, 0, 5.68434e-14, 0, 10, -2.43571, -0.0427551, -0.1637 )
+light_color = Color( 0.843137, 0.929412, 0.0627451, 1 )
+spot_range = 7.25305
+spot_angle = 31.8156
+
+[node name="OmniLight2" type="OmniLight" parent="Spatial/MeshInstance3"]
+transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0.438588, 0.298971, -1.57953 )
+light_color = Color( 0.843137, 0.929412, 0.0627451, 1 )
+omni_range = 0.615437

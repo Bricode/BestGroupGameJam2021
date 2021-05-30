@@ -1,23 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Enemy/Emu.gd" type="Script" id=1]
 [ext_resource path="res://BlenderModels/EMU/EMU.tscn" type="PackedScene" id=2]
-[ext_resource path="res://SoundEffects/Emu_noise.wav" type="AudioStream" id=3]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape" id=5]
 extents = Vector3( 1, 0.719894, 0.84879 )
 
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.788807, 0.81667, 0.507224 )
-
-[sub_resource type="SphereMesh" id=3]
-
-[sub_resource type="SpatialMaterial" id=4]
-emission_enabled = true
-emission = Color( 0.0235294, 0.0823529, 0.984314, 1 )
-emission_energy = 0.5
-emission_operator = 0
-emission_on_uv2 = false
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 1.26245, 1, 1.02936 )
 
 [node name="Emu" type="KinematicBody" groups=[
 "Enemies",
@@ -28,42 +18,20 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.598512, 0.346862 )
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 
 [node name="EMU" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, 0, 0, 1 )
 
-[node name="MeshInstance3" type="MeshInstance" parent="."]
-transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.243585, 1.3639, -0.798867 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
+[node name="Hit_zone" type="Area" parent="."]
 
-[node name="OmniLight" type="SpotLight" parent="MeshInstance3"]
-transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0, 0, 0 )
-light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
-spot_range = 13.6689
-spot_angle = 48.1034
+[node name="CollisionShape" type="CollisionShape" parent="Hit_zone"]
+transform = Transform( 0.67391, 0, 0, 0, 0.578757, 0, 0, 0, 0.655888, 0, 0.632266, -1.24176 )
+shape = SubResource( 6 )
 
-[node name="OmniLight2" type="OmniLight" parent="MeshInstance3"]
-transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0.438588, 0.298971, -1.57953 )
-light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
-omni_range = 0.615437
+[node name="Hit_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 
-[node name="MeshInstance4" type="MeshInstance" parent="."]
-transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.147368, 1.3639, -0.798867 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
-
-[node name="OmniLight" type="SpotLight" parent="MeshInstance4"]
-transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0, 0, 0 )
-light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
-spot_range = 13.6689
-spot_angle = 48.1034
-
-[node name="OmniLight2" type="OmniLight" parent="MeshInstance4"]
-transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0.438588, 0.298971, -1.57953 )
-light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
-omni_range = 0.615437
-
-[connection signal="timeout" from="Hit_timer" to="." method="_on_Hit_timer_timeout"]
 [connection signal="body_entered" from="Hit_zone" to="." method="_on_Hit_zone_body_entered"]
+[connection signal="timeout" from="Hit_timer" to="." method="_on_Hit_timer_timeout"]
