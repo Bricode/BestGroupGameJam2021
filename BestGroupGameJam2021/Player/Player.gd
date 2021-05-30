@@ -62,10 +62,12 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity * delta, Vector3.UP)
 	
-
+func _process(delta):
+	
 
 	if Input.is_action_pressed("primary_fire") and PlayerInfo.score >= 20100:
 		if PlayerInfo.charge >= 1:
+			$LazerSound.play()
 			PlayerInfo.change_charge(-1)
 			$LazerSound.play()
 			var lazer = load("res://Player/LaserMesh.tscn").instance()
@@ -75,6 +77,7 @@ func _physics_process(delta):
 			get_parent().get_node("Lazers").add_child(lazer)
 	elif Input.is_action_just_pressed("primary_fire"):		
 		if PlayerInfo.charge >= 10:
+			$LazerSound.play()
 			PlayerInfo.change_charge(-10)
 			$LazerSound.play()
 			create_lazer(global_transform.origin + Vector3(0,0.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
@@ -87,17 +90,18 @@ func _physics_process(delta):
 	
 	if PlayerInfo.konami_code:
 		PlayerInfo.score += 100
-		PlayerInfo.charge = 100
+		PlayerInfo.charge = 500
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
 		shake()
 
-func hit():
+func hit(number):
 	trauma = 1
-	PlayerInfo.change_health(-10)
+	$HitSound.play()
+	PlayerInfo.change_health(number)
 	if PlayerInfo.health <= 0:
 		get_tree().change_scene("res://Ui/DeathScreen/DeathScreen.tscn")
-		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func shake():
 	var amount = pow(trauma, trauma_power)

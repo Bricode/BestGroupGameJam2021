@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Enemy/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Materials/GreenGlowing.tres" type="Material" id=2]
 [ext_resource path="res://BlenderModels/Kangaroo/Kangaroo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SoundEffects/bounce.wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -51,6 +52,10 @@ spot_angle = 48.1034
 transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0.438588, 0.298971, -1.57953 )
 light_color = Color( 0.886275, 0.0588235, 0.0588235, 1 )
 omni_range = 0.615437
+
+[node name="bounce" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 4 )
+unit_db = 0.7
 
 [connection signal="body_entered" from="HitZone" to="." method="_on_HitZone_body_entered"]
 [connection signal="timeout" from="HitTimer" to="." method="_on_HitTimer_timeout"]

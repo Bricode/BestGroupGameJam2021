@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Ui/DeathScreen/DeathScreen.gd" type="Script" id=1]
 [ext_resource path="res://Ui/ButtonTexture/YouDied.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Ui/ButtonTexture/AddScore.png" type="Texture" id=10]
 [ext_resource path="res://Ui/ButtonTexture/youded-Hover.png" type="Texture" id=11]
 [ext_resource path="res://Ui/ButtonTexture/you ded.png" type="Texture" id=12]
+[ext_resource path="res://GameOverSound.mp3" type="AudioStream" id=13]
 
 [node name="DeathScreen" type="Control"]
 anchor_left = 0.5
@@ -155,6 +156,10 @@ margin_right = 446.867
 margin_bottom = 155.514
 texture_normal = ExtResource( 12 )
 texture_hover = ExtResource( 11 )
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = 3.0
 
 [connection signal="pressed" from="YouDied/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="YouDied/Exit" to="." method="_on_Exit_pressed"]

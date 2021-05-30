@@ -31,6 +31,7 @@ func _process(delta):
 	if Vector2(player_vec3.x,player_vec3.z).distance_to(Vector2(enemy_vec3.x,enemy_vec3.z)) <= 2:
 		direction = Vector3(0,0,0)
 	if is_on_floor():
+		$bounce.play()
 		airtime = 15
 	else:
 		airtime -= 50*delta
@@ -41,10 +42,10 @@ func _process(delta):
 
 func _on_HitZone_body_entered(body):
 	if body.is_in_group("Player") and $HitTimer.is_stopped():
-		$HitTimer.start(0.1)
+		$HitTimer.start(0.2)
 
 func _on_HitTimer_timeout():
 	if $HitZone.overlaps_body(player):
-		player.hit()
+		player.hit(-10)
 		$HitTimer.start(1)
 

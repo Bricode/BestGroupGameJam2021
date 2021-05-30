@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Loud thud sound effect.mp3-6f2c7259cd6f5d212b4dff35ae4fd7c3.mp3str"
+
+[deps]
+
+source_file="res://SoundEffects/Loud thud sound effect.mp3"
+dest_files=[ "res://.import/Loud thud sound effect.mp3-6f2c7259cd6f5d212b4dff35ae4fd7c3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
