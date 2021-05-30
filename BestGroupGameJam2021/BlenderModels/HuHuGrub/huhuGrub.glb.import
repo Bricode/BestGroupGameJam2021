@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/huhuGrub.glb-942bdbd8bf11b9c2918a62a41bf6de27.scn"
+path="res://.import/huhuGrub.glb-dfafecda70823e4bce47711c0fb173e1.scn"
 
 [deps]
 
-source_file="res://BlenderModels/HuhuGrub/huhuGrub.glb"
-dest_files=[ "res://.import/huhuGrub.glb-942bdbd8bf11b9c2918a62a41bf6de27.scn" ]
+source_file="res://BlenderModels/HuHuGrub/huhuGrub.glb"
+dest_files=[ "res://.import/huhuGrub.glb-dfafecda70823e4bce47711c0fb173e1.scn" ]
 
 [params]
 

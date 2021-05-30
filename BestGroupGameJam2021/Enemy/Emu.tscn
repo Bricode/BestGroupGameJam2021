@@ -60,6 +60,3 @@ spot_angle = 48.1034
 transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0.438588, 0.298971, -1.57953 )
 light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
 omni_range = 0.615437
-
-[node name="screech" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 3 )
