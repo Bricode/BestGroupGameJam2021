@@ -12,6 +12,7 @@
 [ext_resource path="res://LevelParts/Buildings/6.obj" type="ArrayMesh" id=10]
 [ext_resource path="res://LevelParts/Buildings/5.obj" type="ArrayMesh" id=11]
 [ext_resource path="res://LevelParts/Buildings/2.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://Levels/Enviroment.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=14]
 [ext_resource path="res://LevelParts/Materials/TexturesCom_Asphalt_BrokenRoad_2x2_1K_albedo.png" type="Texture" id=15]
 
@@ -1143,5 +1144,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.284, 0.1, -41.7758 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Car2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.984782, 0 )
+
+[node name="WorldEnvironment" parent="." instance=ExtResource( 13 )]
 
 [connection signal="timeout" from="Enemy_spawn_timer" to="Enemy_Spawns" method="_on_Enemy_spawn_timer_timeout"]
