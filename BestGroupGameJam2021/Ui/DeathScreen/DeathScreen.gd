@@ -7,14 +7,21 @@ func _ready():
 	$YouDied/Add_score/Currnet.text = "Current:" + str(current)
 	show_high_score() 
 
+func _process(delta):
+	if PlayerInfo.konami_code == true:
+		$YouDied2.visible = false
+		$YouDed.visible = true
+	else:
+		$YouDied2.visible = true
+		$YouDed.visible = false
+
 func _on_Exit_pressed():
 	get_tree().change_scene("res://Ui/TitleScreen/Title.tscn")
 
 func _on_NewGame_pressed():
 	PlayerInfo.health = 100
 	PlayerInfo.charge = 100
-	PlayerInfo.power = 100
-	get_tree().change_scene("res://Levels/Level1.tscn")
+	get_tree().change_scene("res://Levels/City.tscn")
 
 func add_hight_score(number,name):
 	$YouDied/Add_score/Add_score_button.disabled = true

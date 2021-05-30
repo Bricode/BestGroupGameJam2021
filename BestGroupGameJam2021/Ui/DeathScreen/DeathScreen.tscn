@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Ui/DeathScreen/DeathScreen.gd" type="Script" id=1]
 [ext_resource path="res://Ui/ButtonTexture/YouDied.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Ui/HighscoreWindow/Highscore Window.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Ui/ButtonTexture/AddScore-Hover.png" type="Texture" id=9]
 [ext_resource path="res://Ui/ButtonTexture/AddScore.png" type="Texture" id=10]
+[ext_resource path="res://Ui/ButtonTexture/youded-Hover.png" type="Texture" id=11]
+[ext_resource path="res://Ui/ButtonTexture/you ded.png" type="Texture" id=12]
 
 [node name="DeathScreen" type="Control"]
 anchor_left = 0.5
@@ -35,9 +37,6 @@ margin_top = -252.398
 margin_right = -0.798248
 margin_bottom = -139.398
 rect_pivot_offset = Vector2( -368.319, -75.0254 )
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -125,11 +124,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="YouDied2" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -398.798
+margin_top = -252.398
+margin_right = -0.798248
+margin_bottom = -139.398
+rect_pivot_offset = Vector2( -368.319, -75.0254 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HighScores" parent="." instance=ExtResource( 8 )]
 margin_left = 752.206
 margin_top = 24.9113
 margin_right = 752.206
 margin_bottom = 24.9113
+
+[node name="YouDed" type="TextureButton" parent="."]
+visible = false
+margin_left = 168.868
+margin_top = 53.5143
+margin_right = 446.867
+margin_bottom = 155.514
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 11 )
 
 [connection signal="pressed" from="YouDied/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="YouDied/Exit" to="." method="_on_Exit_pressed"]
