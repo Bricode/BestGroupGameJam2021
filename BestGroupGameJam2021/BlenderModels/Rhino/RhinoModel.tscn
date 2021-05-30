@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://BlenderModels/Rhino/dark grey.material" type="Material" id=1]
 [ext_resource path="res://BlenderModels/Rhino/BLUE WHITE.material" type="Material" id=2]
 [ext_resource path="res://BlenderModels/Rhino/RED.material" type="Material" id=3]
-[ext_resource path="res://BlenderModels/Rhino/RhinoModel.gd" type="Script" id=4]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube"
@@ -352,7 +351,7 @@ tracks/0/enabled = true
 tracks/0/keys = PoolRealArray( 0, 1, -0.0352261, -6.10127, 0, 0, 0, 0.705063, 0.709145, 1, 1, 1 )
 
 [node name="Rhino" type="Spatial"]
-script = ExtResource( 4 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
 [node name="Armature" type="Spatial" parent="."]
 transform = Transform( 0.00577337, 0.999983, 0, -0.999983, 0.00577337, 0, 0, 0, 1, 6.10137, 0, 0 )
