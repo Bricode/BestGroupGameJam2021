@@ -87,7 +87,7 @@ func _physics_process(delta):
 	
 	if PlayerInfo.konami_code:
 		PlayerInfo.score += 100
-		PlayerInfo.charge = 100
+		PlayerInfo.charge = 500
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
 		shake()

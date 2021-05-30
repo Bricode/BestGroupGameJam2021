@@ -10,7 +10,7 @@ func _on_Exit_pressed():
 func _on_NewGame_pressed():
 	PlayerInfo.score = 0
 	PlayerInfo.health = 100
-	PlayerInfo.charge = 100
+	PlayerInfo.charge = 500
 	get_tree().change_scene("res://Levels/City.tscn")
 
 func _process(delta):
