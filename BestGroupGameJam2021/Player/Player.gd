@@ -32,17 +32,12 @@ func _input(event):
 		if camera_x_rotation + x_delta > -90 and camera_x_rotation + x_delta < 90: 
 			camera.rotate_x(deg2rad(-x_delta))
 			camera_x_rotation += x_delta
-
-
-
 		
 func _physics_process(delta):
 	var head_basis = head.get_global_transform().basis
 	
 	if Input.is_action_pressed("sprint"):
 		acceleration = 100
-	elif Input.is_action_pressed("move_forward") and Input.is_action_pressed("move_left") or Input.is_action_pressed("move_forward") and Input.is_action_pressed("move_right"):
-		acceleration = 200
 	else:
 		acceleration = 50
 	
@@ -74,57 +69,66 @@ func _process(delta):
 		if PlayerInfo.charge >= 1:
 			$LazerSound.play()
 			PlayerInfo.change_charge(-1)
+			$LazerSound.play()
 			var lazer = load("res://Player/LaserMesh.tscn").instance()
 			lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
 			lazer.look_at(lazer.move,Vector3.UP)
 			lazer.translation = global_transform.origin + Vector3(0,0.5,0)
 			get_parent().get_node("Lazers").add_child(lazer)
+<<<<<<< HEAD
 	elif Input.is_action_just_pressed("primary_fire"):
 		
+=======
+	elif Input.is_action_just_pressed("primary_fire"):		
+>>>>>>> b00a21292dcebc040314fd354cdb8a7d1e1a119b
 		if PlayerInfo.charge >= 10:
 			$LazerSound.play()
 			PlayerInfo.change_charge(-10)
-			var lazer = load("res://Player/LaserMesh.tscn").instance()
-			lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
-			lazer.look_at(lazer.move,Vector3.UP)
-			lazer.translation = global_transform.origin + Vector3(0,0.5,0)
-			get_parent().get_node("Lazers").add_child(lazer)
+			$LazerSound.play()
+			create_lazer(global_transform.origin + Vector3(0,0.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 			if PlayerInfo.score >= 1100:
+<<<<<<< HEAD
 				$LazerSound.play()
 				lazer = load("res://Player/LaserMesh.tscn").instance()
 				lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
 				lazer.look_at(lazer.move,Vector3.UP)
 				lazer.translation = global_transform.origin- Vector3(0,0.5,0)
 				get_parent().get_node("Lazers").add_child(lazer)
+=======
+				create_lazer(global_transform.origin - Vector3(0,0.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
+>>>>>>> b00a21292dcebc040314fd354cdb8a7d1e1a119b
 				if PlayerInfo.score >= 5100:
-					lazer = load("res://Player/LaserMesh.tscn").instance()
-					lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
-					lazer.look_at(lazer.move,Vector3.UP)
-					lazer.translation = global_transform.origin + Vector3(0,1.5,0)
-					get_parent().get_node("Lazers").add_child(lazer)
+					create_lazer(global_transform.origin + Vector3(0,1.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 					if PlayerInfo.score >= 10100:
-						lazer = load("res://Player/LaserMesh.tscn").instance()
-						lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
-						lazer.look_at(lazer.move,Vector3.UP)
-						lazer.translation = global_transform.origin- Vector3(0,1.5,0)
-						get_parent().get_node("Lazers").add_child(lazer)
+						create_lazer(global_transform.origin - Vector3(0,1.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 	
 	if PlayerInfo.konami_code:
-		PlayerInfo.score += 10
-		PlayerInfo.charge = 100
+		PlayerInfo.score += 100
+		PlayerInfo.charge = 500
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
 		shake()
 
-func hit():
+func hit(number):
 	trauma = 1
+<<<<<<< HEAD
 	$HitSound.play()
 	PlayerInfo.change_health(-10)
+=======
+	PlayerInfo.change_health(number)
+>>>>>>> b00a21292dcebc040314fd354cdb8a7d1e1a119b
 	if PlayerInfo.health <= 0:
 		get_tree().change_scene("res://Ui/DeathScreen/DeathScreen.tscn")
-		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func shake():
 	var amount = pow(trauma, trauma_power)
 	$Head/Camera.h_offset = max_offset.x * amount * rand_range(-1, 1)
 	$Head/Camera.v_offset = max_offset.y * amount * rand_range(-1, 1)
+
+func create_lazer(pos,dir):
+	var lazer = load("res://Player/LaserMesh.tscn").instance()
+	lazer.move = dir
+	lazer.look_at(dir,Vector3.UP)
+	lazer.translation = pos
+	get_parent().get_node("Lazers").add_child(lazer)
