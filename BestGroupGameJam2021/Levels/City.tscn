@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=38 format=2]
-=======
-[gd_scene load_steps=29 format=2]
->>>>>>> b00a21292dcebc040314fd354cdb8a7d1e1a119b
 
 [ext_resource path="res://LevelParts/Buildings/4.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://GameModels/LightPost.fbx" type="PackedScene" id=2]
@@ -16,18 +12,15 @@
 [ext_resource path="res://LevelParts/Buildings/6.obj" type="ArrayMesh" id=10]
 [ext_resource path="res://LevelParts/Buildings/5.obj" type="ArrayMesh" id=11]
 [ext_resource path="res://LevelParts/Buildings/2.obj" type="ArrayMesh" id=12]
-<<<<<<< HEAD
 [ext_resource path="res://BlenderModels/Volcano/Volcano.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=14]
 [ext_resource path="res://LevelParts/Materials/TexturesCom_Asphalt_BrokenRoad_2x2_1K_albedo.png" type="Texture" id=15]
 [ext_resource path="res://BlenderModels/Volcano/fire_01.png" type="Texture" id=16]
 [ext_resource path="res://Levels/Enviroment.tscn" type="PackedScene" id=17]
-=======
 [ext_resource path="res://BlenderModels/Sky Tower/Sky tower.glb" type="PackedScene" id=13]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=14]
 [ext_resource path="res://LevelParts/Materials/TexturesCom_Asphalt_BrokenRoad_2x2_1K_albedo.png" type="Texture" id=15]
 [ext_resource path="res://BlenderModels/Sky Tower/Sky tower.gd" type="Script" id=21]
->>>>>>> b00a21292dcebc040314fd354cdb8a7d1e1a119b
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -66,7 +59,6 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
-<<<<<<< HEAD
 [sub_resource type="SpatialMaterial" id=13]
 albedo_color = Color( 0.0980392, 0.27451, 0.972549, 1 )
 
@@ -107,8 +99,6 @@ color_ramp = SubResource( 18 )
 
 [sub_resource type="QuadMesh" id=20]
 
-=======
->>>>>>> b00a21292dcebc040314fd354cdb8a7d1e1a119b
 [node name="Spatial2" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 14 )]
@@ -1249,7 +1239,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.284, 0.1, -41.7758 )
 [node name="MeshInstance" type="MeshInstance" parent="Car2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.984782, 0 )
 
-<<<<<<< HEAD
 [node name="Volcano" parent="." instance=ExtResource( 13 )]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 21.3277, -2.43208, -44.3002 )
 
@@ -1326,7 +1315,6 @@ transform = Transform( 3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0, 13.0557, 
 light_color = Color( 0.945098, 0.721569, 0.407843, 1 )
 light_energy = 5.47
 omni_range = 10.0
-=======
 [node name="Sky tower2" parent="." instance=ExtResource( 13 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -0.287, 4.751, -77.901 )
 script = ExtResource( 21 )
@@ -1390,6 +1378,5 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.74193, 19.6902, -3.038
 light_energy = 5.0
 light_indirect_energy = 2.0
 omni_range = 9.3005
->>>>>>> b00a21292dcebc040314fd354cdb8a7d1e1a119b
 
 [connection signal="timeout" from="Enemy_spawn_timer" to="Enemy_Spawns" method="_on_Enemy_spawn_timer_timeout"]

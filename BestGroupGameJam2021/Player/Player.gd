@@ -75,28 +75,14 @@ func _process(delta):
 			lazer.look_at(lazer.move,Vector3.UP)
 			lazer.translation = global_transform.origin + Vector3(0,0.5,0)
 			get_parent().get_node("Lazers").add_child(lazer)
-<<<<<<< HEAD
-	elif Input.is_action_just_pressed("primary_fire"):
-		
-=======
 	elif Input.is_action_just_pressed("primary_fire"):		
->>>>>>> b00a21292dcebc040314fd354cdb8a7d1e1a119b
 		if PlayerInfo.charge >= 10:
 			$LazerSound.play()
 			PlayerInfo.change_charge(-10)
 			$LazerSound.play()
 			create_lazer(global_transform.origin + Vector3(0,0.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 			if PlayerInfo.score >= 1100:
-<<<<<<< HEAD
-				$LazerSound.play()
-				lazer = load("res://Player/LaserMesh.tscn").instance()
-				lazer.move = -($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized()
-				lazer.look_at(lazer.move,Vector3.UP)
-				lazer.translation = global_transform.origin- Vector3(0,0.5,0)
-				get_parent().get_node("Lazers").add_child(lazer)
-=======
 				create_lazer(global_transform.origin - Vector3(0,0.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
->>>>>>> b00a21292dcebc040314fd354cdb8a7d1e1a119b
 				if PlayerInfo.score >= 5100:
 					create_lazer(global_transform.origin + Vector3(0,1.5,0),-($Head/Camera.global_transform.origin-$Head/Camera/Spatial.global_transform.origin).normalized())
 					if PlayerInfo.score >= 10100:
@@ -111,12 +97,8 @@ func _process(delta):
 
 func hit(number):
 	trauma = 1
-<<<<<<< HEAD
 	$HitSound.play()
-	PlayerInfo.change_health(-10)
-=======
 	PlayerInfo.change_health(number)
->>>>>>> b00a21292dcebc040314fd354cdb8a7d1e1a119b
 	if PlayerInfo.health <= 0:
 		get_tree().change_scene("res://Ui/DeathScreen/DeathScreen.tscn")
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

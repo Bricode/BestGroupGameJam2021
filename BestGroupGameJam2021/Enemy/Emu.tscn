@@ -5,35 +5,18 @@
 [ext_resource path="res://SoundEffects/Emu_noise.wav" type="AudioStream" id=3]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.321948, 0.765298, 1.2064 )
+extents = Vector3( 1, 0.719894, 0.84879 )
 
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.788807, 0.81667, 0.507224 )
-
-[node name="Emu" type="KinematicBody" groups=[
-"Enemies",
-]]
-collision_layer = 3
-collision_mask = 3
+[node name="Emu" type="KinematicBody"]
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.281101, 0.346862 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.598512, 0.346862 )
 shape = SubResource( 1 )
 
 [node name="EMU" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, 0, 0, 1 )
-script = null
 
-[node name="Hit_timer" type="Timer" parent="."]
-wait_time = 0.2
-
-[node name="Hit_zone" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.66728 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Hit_zone"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402841, 0.167213 )
-shape = SubResource( 2 )
-
-[connection signal="timeout" from="Hit_timer" to="." method="_on_Hit_timer_timeout"]
-[connection signal="body_entered" from="Hit_zone" to="." method="_on_Hit_zone_body_entered"]
+[node name="screech" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+unit_db = 8.247
