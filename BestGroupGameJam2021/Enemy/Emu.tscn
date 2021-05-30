@@ -7,12 +7,9 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 0.719894, 0.84879 )
 
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.788807, 0.81667, 0.507224 )
+[sub_resource type="SphereMesh" id=2]
 
-[sub_resource type="SphereMesh" id=3]
-
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=3]
 emission_enabled = true
 emission = Color( 0.0235294, 0.0823529, 0.984314, 1 )
 emission_energy = 0.5
@@ -35,8 +32,8 @@ transform = Transform( -0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25
 
 [node name="MeshInstance3" type="MeshInstance" parent="."]
 transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.243585, 1.3639, -0.798867 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
 
 [node name="OmniLight" type="SpotLight" parent="MeshInstance3"]
 transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0, 0, 0 )
@@ -51,8 +48,8 @@ omni_range = 0.615437
 
 [node name="MeshInstance4" type="MeshInstance" parent="."]
 transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.147368, 1.3639, -0.798867 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
 
 [node name="OmniLight" type="SpotLight" parent="MeshInstance4"]
 transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0, 0, 0 )
@@ -65,5 +62,5 @@ transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0.438588, 0.298971, -1.5795
 light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
 omni_range = 0.615437
 
-[connection signal="timeout" from="Hit_timer" to="." method="_on_Hit_timer_timeout"]
-[connection signal="body_entered" from="Hit_zone" to="." method="_on_Hit_zone_body_entered"]
+[node name="screech" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
