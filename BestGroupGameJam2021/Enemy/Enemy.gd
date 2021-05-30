@@ -41,10 +41,10 @@ func _process(delta):
 
 func _on_HitZone_body_entered(body):
 	if body.is_in_group("Player") and $HitTimer.is_stopped():
-		$HitTimer.start(0.1)
+		$HitTimer.start(0.2)
 
 func _on_HitTimer_timeout():
 	if $HitZone.overlaps_body(player):
-		player.hit()
+		player.hit(-10)
 		$HitTimer.start(1)
 

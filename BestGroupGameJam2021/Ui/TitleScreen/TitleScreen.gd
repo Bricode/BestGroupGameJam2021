@@ -5,7 +5,6 @@ func _onready():
 
 func _on_Exit_pressed():
 	get_tree().quit()
-	pass # Replace with function body.
 
 func _on_NewGame_pressed():
 	PlayerInfo.score = 0
