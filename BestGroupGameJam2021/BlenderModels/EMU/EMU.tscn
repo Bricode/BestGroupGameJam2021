@@ -575,7 +575,7 @@ playback_speed = 2.0
 "anims/Running Attack" = SubResource( 4 )
 
 [node name="Spatial" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.65845, 1.13704 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.319827, 0.361419 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="Spatial"]
 transform = Transform( -0.0977294, 0, 0.0211888, 0, 0.1, 0, -0.0211888, 0, -0.0977294, -0.925074, 5.47419, 7.29442 )

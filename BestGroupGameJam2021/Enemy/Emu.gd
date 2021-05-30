@@ -26,7 +26,7 @@ func _on_Hit_zone_body_entered(body):
 		
 func _on_Hit_timer_timeout():
 	if $Hit_zone.overlaps_body(player):
-		$screech.play()
+		#$screeach.play()
 		player.hit(-12)
 		$Hit_timer.start(1)
 
