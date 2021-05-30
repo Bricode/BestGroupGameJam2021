@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://LevelParts/Buildings/4.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://GameModels/LightPost.fbx" type="PackedScene" id=2]
@@ -15,8 +15,7 @@
 [ext_resource path="res://BlenderModels/Sky Tower/Sky tower.glb" type="PackedScene" id=13]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=14]
 [ext_resource path="res://LevelParts/Materials/TexturesCom_Asphalt_BrokenRoad_2x2_1K_albedo.png" type="Texture" id=15]
-[ext_resource path="res://BlenderModels/Volcano/fire_01.png" type="Texture" id=16]
-[ext_resource path="res://Levels/Enviroment.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Levels/Enviroment.tscn" type="PackedScene" id=20]
 [ext_resource path="res://BlenderModels/Sky Tower/Sky tower.gd" type="Script" id=21]
 
 [sub_resource type="CubeMesh" id=1]
@@ -92,6 +91,8 @@ color_ramp = SubResource( 15 )
 
 [node name="Player" parent="." instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.931114, 3.543, -5.71978 )
+
+[node name="WorldEnvironment" parent="." instance=ExtResource( 20 )]
 
 [node name="Floor" type="StaticBody" parent="."]
 transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.955627, 0 )
@@ -1144,6 +1145,102 @@ transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.01
 mesh = SubResource( 11 )
 material/0 = SubResource( 12 )
 
+[node name="LightPost15" parent="Spatial2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75917, 0.297263, 40.9756 )
+
+[node name="SpotLight" type="SpotLight" parent="Spatial2/LightPost15"]
+transform = Transform( 1, 0, 0, 0, 0.0526323, 0.998614, 0, -0.998614, 0.0526323, 0, 7.07609, -1.29856 )
+light_energy = 16.0
+light_specular = 0.0
+spot_range = 8.24863
+spot_angle = 25.2262
+script = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost15/SpotLight"]
+transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+
+[node name="LightPost16" parent="Spatial2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1551, 0.297263, 40.9756 )
+
+[node name="SpotLight" type="SpotLight" parent="Spatial2/LightPost16"]
+transform = Transform( 1, 0, 0, 0, 0.0526323, 0.998614, 0, -0.998614, 0.0526323, 0, 7.07609, -1.29856 )
+light_energy = 16.0
+light_specular = 0.0
+spot_range = 8.24863
+spot_angle = 25.2262
+script = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost16/SpotLight"]
+transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+
+[node name="LightPost17" parent="Spatial2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.02, 0.297263, 19.913 )
+
+[node name="SpotLight" type="SpotLight" parent="Spatial2/LightPost17"]
+transform = Transform( 1, 0, 0, 0, 0.0526323, 0.998614, 0, -0.998614, 0.0526323, 0, 7.07609, -1.29856 )
+light_energy = 16.0
+light_specular = 0.0
+spot_range = 8.24863
+spot_angle = 25.2262
+script = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost17/SpotLight"]
+transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+
+[node name="LightPost19" parent="Spatial2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5383, 0.297263, 5.21185 )
+
+[node name="SpotLight" type="SpotLight" parent="Spatial2/LightPost19"]
+transform = Transform( 1, 0, 0, 0, 0.0526323, 0.998614, 0, -0.998614, 0.0526323, 0, 7.07609, -1.29856 )
+light_energy = 16.0
+light_specular = 0.0
+spot_range = 8.24863
+spot_angle = 25.2262
+script = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost19/SpotLight"]
+transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+
+[node name="LightPost20" parent="Spatial2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5383, 0.297263, -21.5137 )
+
+[node name="SpotLight" type="SpotLight" parent="Spatial2/LightPost20"]
+transform = Transform( 1, 0, 0, 0, 0.0526323, 0.998614, 0, -0.998614, 0.0526323, 0, 7.07609, -1.29856 )
+light_energy = 16.0
+light_specular = 0.0
+spot_range = 8.24863
+spot_angle = 25.2262
+script = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost20/SpotLight"]
+transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+
+[node name="LightPost18" parent="Spatial2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8197, 0.297263, 9.72287 )
+
+[node name="SpotLight" type="SpotLight" parent="Spatial2/LightPost18"]
+transform = Transform( 1, 0, 0, 0, 0.0526323, 0.998614, 0, -0.998614, 0.0526323, 0, 7.07609, -1.29856 )
+light_energy = 16.0
+light_specular = 0.0
+spot_range = 8.24863
+spot_angle = 25.2262
+script = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost18/SpotLight"]
+transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+
 [node name="LightPost12" parent="Spatial2" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40.568, 0.297263, -13.399 )
 
@@ -1156,6 +1253,38 @@ spot_angle = 25.2262
 script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost12/SpotLight"]
+transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+
+[node name="LightPost13" parent="Spatial2" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40.568, 0.297263, 8.62035 )
+
+[node name="SpotLight" type="SpotLight" parent="Spatial2/LightPost13"]
+transform = Transform( 1, 0, 0, 0, 0.0526323, 0.998614, 0, -0.998614, 0.0526323, 0, 7.07609, -1.29856 )
+light_energy = 16.0
+light_specular = 0.0
+spot_range = 8.24863
+spot_angle = 25.2262
+script = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost13/SpotLight"]
+transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+
+[node name="LightPost14" parent="Spatial2" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40.568, 0.297263, 36.8663 )
+
+[node name="SpotLight" type="SpotLight" parent="Spatial2/LightPost14"]
+transform = Transform( 1, 0, 0, 0, 0.0526323, 0.998614, 0, -0.998614, 0.0526323, 0, 7.07609, -1.29856 )
+light_energy = 16.0
+light_specular = 0.0
+spot_range = 8.24863
+spot_angle = 25.2262
+script = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial2/LightPost14/SpotLight"]
 transform = Transform( 0.21498, 0, 0, 0, 0.0113149, -0.214682, 0, 0.214682, 0.0113149, -0.00434017, -0.00514412, 0.2437 )
 mesh = SubResource( 11 )
 material/0 = SubResource( 12 )
@@ -1210,23 +1339,55 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5875, 30.4835, -21.5855 )
 
 [node name="Lazers" type="Node" parent="."]
 
-[node name="Car2" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.1528, 0.689768, 6.67796 )
+[node name="huhuGrubs" type="Node" parent="."]
 
-[node name="HuhuGrub" parent="Car2" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.1, -1.5 )
+[node name="HuhuGrub" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 15.147, 4.24953, -6.0251 )
 
-[node name="HuhuGrub2" parent="Car2" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66.6466, 0.1, 29.2953 )
+[node name="HuhuGrub2" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 39.2126, 0.417866, -6.0251 )
 
-[node name="HuhuGrub3" parent="Car2" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.1, 29.0734 )
+[node name="HuhuGrub3" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 39.2126, 0.417866, -37.1922 )
 
-[node name="HuhuGrub4" parent="Car2" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.284, 0.1, -41.7758 )
+[node name="HuhuGrub4" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -36.121, 0.417866, -37.1922 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Car2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.984782, 0 )
+[node name="HuhuGrub5" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -36.121, 0.417866, -9.613 )
+
+[node name="HuhuGrub6" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -36.121, 0.417866, -0.415577 )
+
+[node name="HuhuGrub7" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -29.6222, 0.417866, 9.34036 )
+
+[node name="HuhuGrub8" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 6.59376, 0.417866, -37.1748 )
+
+[node name="HuhuGrub9" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 6.6543, 0.427456, 7.56015 )
+
+[node name="HuhuGrub10" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -26.5365, 0.417866, 35.6729 )
+
+[node name="HuhuGrub11" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -26.5365, 0.417866, 38.0324 )
+
+[node name="HuhuGrub12" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -37.9624, 0.417866, 26.38 )
+
+[node name="HuhuGrub13" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.183006, 0.417866, 36.7585 )
+
+[node name="HuhuGrub14" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 38.8188, 0.417866, 36.7585 )
+
+[node name="HuhuGrub15" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 38.8188, 0.417866, 5.9434 )
+
+[node name="HuhuGrub16" parent="huhuGrubs" instance=ExtResource( 8 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 34.6478, 0.417866, 5.9434 )
 
 [node name="Volcano" parent="." instance=ExtResource( 13 )]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 21.3277, -2.43208, -44.3002 )
