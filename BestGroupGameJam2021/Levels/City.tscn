@@ -1194,4 +1194,68 @@ transform = Transform( -0.00370007, 0, 0.499986, 0, 0.5, 0, -0.499986, 0, -0.003
 
 [node name="WorldEnvironment" parent="." instance=ExtResource( 20 )]
 
+[node name="Sky tower" parent="." instance=ExtResource( 13 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -0.287277, 4.75148, -77.9009 )
+script = ExtResource( 16 )
+
+[node name="OmniLight" type="OmniLight" parent="Sky tower"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 19.69, 4.57544 )
+light_energy = 4.0
+light_indirect_energy = 2.0
+omni_range = 9.3005
+
+[node name="OmniLight7" type="OmniLight" parent="Sky tower"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.12841, 19.69, 2.32079 )
+light_energy = 5.0
+light_indirect_energy = 2.0
+omni_range = 9.3005
+
+[node name="OmniLight8" type="OmniLight" parent="Sky tower"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.12841, 19.69, -3.03848 )
+light_energy = 5.0
+light_indirect_energy = 2.0
+omni_range = 9.3005
+
+[node name="OmniLight9" type="OmniLight" parent="Sky tower"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.74207, 19.69, -3.03848 )
+light_energy = 5.0
+light_indirect_energy = 2.0
+omni_range = 9.3005
+
+[node name="OmniLight10" type="OmniLight" parent="Sky tower"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.74207, 19.69, 2.32264 )
+light_energy = 5.0
+light_indirect_energy = 2.0
+omni_range = 9.3005
+
+[node name="OmniLight2" type="OmniLight" parent="Sky tower"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.13356, 19.69, 0.0145683 )
+light_energy = 4.0
+light_indirect_energy = 2.0
+omni_range = 9.3005
+
+[node name="OmniLight3" type="OmniLight" parent="Sky tower"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.90864, 19.69, 0.0145683 )
+light_energy = 4.0
+light_indirect_energy = 2.0
+omni_range = 9.3005
+
+[node name="OmniLight4" type="OmniLight" parent="Sky tower"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0558367, 19.69, -4.7464 )
+light_energy = 4.0
+light_indirect_energy = 2.0
+omni_range = 9.3005
+
+[node name="OmniLight5" type="OmniLight" parent="Sky tower"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0558367, 14.2421, 3.07457 )
+light_energy = 4.0
+light_indirect_energy = 2.0
+omni_range = 9.3005
+
+[node name="OmniLight6" type="OmniLight" parent="Sky tower"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0558367, 14.2421, -3.02839 )
+light_energy = 4.0
+light_indirect_energy = 2.0
+omni_range = 9.3005
+
 [connection signal="timeout" from="Enemy_spawn_timer" to="Enemy_Spawns" method="_on_Enemy_spawn_timer_timeout"]

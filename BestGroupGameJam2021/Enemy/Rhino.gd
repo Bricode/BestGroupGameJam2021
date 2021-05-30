@@ -16,8 +16,8 @@ func _process(delta):
 	var direction = -player.transform.origin.direction_to(transform.origin) *speed
 	var player_vec3 = player.transform.origin
 	var enemy_vec3 = transform.origin
-	if Vector2(player_vec3.x,player_vec3.z).distance_to(Vector2(enemy_vec3.x,enemy_vec3.z)) <= 10:
-		speed = 500
+	if Vector2(player_vec3.x,player_vec3.z).distance_to(Vector2(enemy_vec3.x,enemy_vec3.z)) <= 8:
+		speed = 400
 	elif Vector2(player_vec3.x,player_vec3.z).distance_to(Vector2(enemy_vec3.x,enemy_vec3.z)) > 10:
 		speed = 300
 	if Vector2(player_vec3.x,player_vec3.z).distance_to(Vector2(enemy_vec3.x,enemy_vec3.z)) <= 3:
