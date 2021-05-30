@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Enemy/Emu.gd" type="Script" id=1]
 [ext_resource path="res://BlenderModels/EMU/EMU.tscn" type="PackedScene" id=2]
@@ -8,6 +8,15 @@ extents = Vector3( 0.321948, 0.765298, 1.2064 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.788807, 0.81667, 0.507224 )
+
+[sub_resource type="SphereMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+emission_enabled = true
+emission = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+emission_energy = 0.5
+emission_operator = 0
+emission_on_uv2 = false
 
 [node name="Emu" type="KinematicBody" groups=[
 "Enemies",
@@ -33,6 +42,38 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.66728 )
 [node name="CollisionShape" type="CollisionShape" parent="Hit_zone"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402841, 0.167213 )
 shape = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.243585, 1.3639, -0.798867 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="OmniLight" type="SpotLight" parent="MeshInstance3"]
+transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0, 0, 0 )
+light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+spot_range = 13.6689
+spot_angle = 48.1034
+
+[node name="OmniLight2" type="OmniLight" parent="MeshInstance3"]
+transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0.438588, 0.298971, -1.57953 )
+light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+omni_range = 0.615437
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.147368, 1.3639, -0.798867 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="OmniLight" type="SpotLight" parent="MeshInstance4"]
+transform = Transform( 6.4817, 0, 0, 0, 6.4817, 0, 0, 0, 6.4817, 0, 0, 0 )
+light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+spot_range = 13.6689
+spot_angle = 48.1034
+
+[node name="OmniLight2" type="OmniLight" parent="MeshInstance4"]
+transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0.438588, 0.298971, -1.57953 )
+light_color = Color( 0.0235294, 0.0823529, 0.984314, 1 )
+omni_range = 0.615437
 
 [connection signal="timeout" from="Hit_timer" to="." method="_on_Hit_timer_timeout"]
 [connection signal="body_entered" from="Hit_zone" to="." method="_on_Hit_zone_body_entered"]
