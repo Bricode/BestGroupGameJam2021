@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/rhinogrunt.mp3-a4a6a67923bee1f08b525e8905ea8838.mp3str"
+
+[deps]
+
+source_file="res://SoundEffects/rhinogrunt.mp3"
+dest_files=[ "res://.import/rhinogrunt.mp3-a4a6a67923bee1f08b525e8905ea8838.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

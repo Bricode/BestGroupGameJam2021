@@ -9,8 +9,6 @@ func _ready():
 	$EMU/AnimationPlayer.play("Running Attack")
 	
 func _process(delta):
-	if(rand_range(0,100) > 99):
-		pass
 	var move = Vector3(0,0,0)
 	look_at(player.global_transform.origin, Vector3.UP)
 	rotation_degrees.x = 0
@@ -28,6 +26,7 @@ func _on_Hit_zone_body_entered(body):
 		
 func _on_Hit_timer_timeout():
 	if $Hit_zone.overlaps_body(player):
+		$screech.play()
 		player.hit(-12)
 		$Hit_timer.start(1)
 
